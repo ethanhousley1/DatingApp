@@ -215,4 +215,15 @@ you're ready to meet, and the quality score.
 ## Repo contents
 
 - `README.md` — this document.
-- `design-prompt.md` — the brief to hand to Claude Design for the three screens.
+- `design-prompt.md` — the brief handed to Claude Design for the three screens.
+- `design/` — the generated Claude Design artboards:
+  - `Landing.dc.html`
+  - `MarketComparison.dc.html` (screen 2, "Why we're different")
+  - `Features.dc.html`
+
+These are `.dc.html` canvas artboards and expect a sibling `support.js` from the
+Claude Design runtime, which is not checked in — they are design source, not a
+deployable site.
+
+**Note:** the artboards use `[DatingApp]` as the name placeholder; this README uses
+`[AppName]`. Normalize on one token before the real name goes in.

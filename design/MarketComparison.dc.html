@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#fff;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+  *{box-sizing:border-box}
+  a{color:oklch(0.55 0.19 300);text-decoration:none}
+  a:hover{color:oklch(0.44 0.19 300)}
+</style>
+</helmet>
+
+<div style="font-family:'Figtree',ui-sans-serif,system-ui,sans-serif;color:oklch(0.22 0.02 300);background:#fff;overflow-x:hidden">
+
+  <nav style="position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:clamp(14px,3vw,20px) clamp(16px,5vw,48px);background:oklch(0.99 0.003 300 / 0.85);backdrop-filter:blur(10px);border-bottom:1px solid oklch(0.93 0.015 300)">
+    <a href="Landing.dc.html" style="font-weight:800;font-size:19px;letter-spacing:-0.01em;color:oklch(0.4 0.19 300)">[DatingApp]</a>
+    <a href="#join" style="flex-shrink:0;background:oklch(0.55 0.19 300);color:#fff;font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;box-shadow:0 8px 20px -8px oklch(0.5 0.19 300 / 0.55)">Join the waitlist</a>
+  </nav>
+
+  <header style="padding:clamp(44px,9vw,84px) clamp(20px,6vw,48px) clamp(40px,7vw,64px);max-width:760px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:16px">
+    <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.55 0.19 300)">Why we're different</div>
+    <h1 style="margin:0;font-size:clamp(28px,5vw,42px);font-weight:800;line-height:1.12">Dating apps aren't struggling by accident.</h1>
+    <p style="margin:0;font-size:17px;line-height:1.6;color:oklch(0.42 0.02 300)">The numbers say people are leaving in the exact way you'd expect if the format itself had stopped working.</p>
+  </header>
+
+  <section style="padding:0 clamp(20px,6vw,48px) clamp(56px,9vw,90px);max-width:1080px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+      <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">&minus;37%</div>
+        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">Match Group active users, year-over-year, March 2026</div>
+      </div>
+      <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">&minus;5.2%</div>
+        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">Tinder revenue in 2025 &mdash; its first annual decline ever</div>
+      </div>
+      <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">&minus;9.5%</div>
+        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">Bumble revenue in 2025</div>
+      </div>
+      <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">9.6M &rarr; 8.8M</div>
+        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">Tinder paying users, 2024 to Q4 2025</div>
+      </div>
+      <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">12&ndash;15M</div>
+        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">Average active users per app, down from 50&ndash;70M in 2019&ndash;20</div>
+      </div>
+      <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">78%</div>
+        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">of users report dating app burnout</div>
+      </div>
+      <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">88% / 90%</div>
+        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">of men / women often or sometimes disappointed by people they meet on apps</div>
+      </div>
+      <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">48%</div>
+        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">of online daters have had at least one unwanted experience</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,10vw,110px) clamp(20px,6vw,48px);background:oklch(0.975 0.014 300)">
+    <div style="max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:36px">
+      <div style="max-width:640px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.55 0.19 300)">The exception</div>
+        <h2 style="margin:0;font-size:clamp(26px,4.6vw,38px);font-weight:800;line-height:1.15">One app is growing. It's worth asking why.</h2>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;align-items:end">
+        <div style="background:#fff;border-radius:22px;padding:24px 20px;display:flex;flex-direction:column;gap:14px">
+          <div style="font-size:13px;font-weight:700;color:oklch(0.45 0.02 300)">Revenue growth, 2025</div>
+          <div style="display:flex;align-items:flex-end;gap:14px;height:140px">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex:1"><div style="width:100%;max-width:44px;height:20px;background:oklch(0.85 0.03 300);border-radius:6px 6px 0 0"></div><div style="font-size:11px;color:oklch(0.5 0.02 300)">Bumble</div></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex:1"><div style="width:100%;max-width:44px;height:32px;background:oklch(0.85 0.03 300);border-radius:6px 6px 0 0"></div><div style="font-size:11px;color:oklch(0.5 0.02 300)">Tinder</div></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex:1"><div style="width:100%;max-width:44px;height:120px;background:oklch(0.55 0.19 300);border-radius:6px 6px 0 0"></div><div style="font-size:11px;font-weight:700;color:oklch(0.5 0.19 300)">Hinge</div></div>
+          </div>
+          <div style="font-size:12.5px;color:oklch(0.5 0.02 300)">Hinge revenue <strong style="color:oklch(0.5 0.19 300)">+25%</strong> while the category fell.</div>
+        </div>
+        <div style="background:#fff;border-radius:22px;padding:24px 20px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-size:36px;font-weight:800;color:oklch(0.5 0.19 300)">+31%</div>
+          <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.5">Growth in Hinge paying users, while paying users fell nearly everywhere else.</div>
+        </div>
+      </div>
+
+      <p style="margin:0;font-size:16.5px;line-height:1.65;color:oklch(0.4 0.02 300);max-width:700px">It did two things differently. It promised to be <strong>&ldquo;designed to be deleted,&rdquo;</strong> and it replaced the blank profile with <strong>prompts</strong> &mdash; specific questions that get a real answer out of someone. Both worked. Both are also half-measures, and we'll say that plainly, not to be smug: an app that bills you monthly is still paid to keep you. Prompts you read before you ever speak are still a profile you're judged on.</p>
+
+      <div style="background:#fff;border-radius:22px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;font-size:13px;font-weight:700;background:oklch(0.955 0.025 300);padding:14px 18px">
+          <div></div><div>Hinge</div><div style="color:oklch(0.5 0.19 300)">[DatingApp]</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;padding:16px 18px;font-size:13.5px;border-top:1px solid oklch(0.94 0.01 300);gap:8px">
+          <div style="font-weight:700">Designed to be deleted</div>
+          <div style="color:oklch(0.45 0.02 300)">Subscription, billed monthly</div>
+          <div style="color:oklch(0.4 0.02 300)">One-time payment, business is finished with you</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;padding:16px 18px;font-size:13.5px;border-top:1px solid oklch(0.94 0.01 300);gap:8px">
+          <div style="font-weight:700">Prompts</div>
+          <div style="color:oklch(0.45 0.02 300)">Read on a profile, before you talk</div>
+          <div style="color:oklch(0.4 0.02 300)">The conversation itself is the profile</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;padding:16px 18px;font-size:13.5px;border-top:1px solid oklch(0.94 0.01 300);gap:8px">
+          <div style="font-weight:700">Photos</div>
+          <div style="color:oklch(0.45 0.02 300)">The first thing you see</div>
+          <div style="color:oklch(0.4 0.02 300)">Earned, mutually, through real conversation</div>
+        </div>
+      </div>
+      <p style="margin:0;font-weight:700;font-size:16px">Hinge showed where the demand went. We don't think it went far enough.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,10vw,110px) clamp(20px,6vw,48px);max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+    <h2 style="margin:0;font-size:clamp(26px,4.4vw,34px);font-weight:800;line-height:1.15;text-align:center">Four things we built differently, on purpose.</h2>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:2px;border-radius:22px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+          <div style="background:oklch(0.975 0.014 300);padding:22px;display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:oklch(0.55 0.02 300)">The problem</div><div style="font-size:15.5px;font-weight:600">Appearance is the first and only filter</div></div>
+          <div style="background:oklch(0.955 0.025 300);padding:22px;display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:oklch(0.5 0.19 300)">Our answer</div><div style="font-size:15.5px;font-weight:600">We remove the photo until it's earned</div></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:2px;border-radius:22px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+          <div style="background:oklch(0.975 0.014 300);padding:22px;display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:oklch(0.55 0.02 300)">The problem</div><div style="font-size:15.5px;font-weight:600">Abundance kills investment</div></div>
+          <div style="background:oklch(0.955 0.025 300);padding:22px;display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:oklch(0.5 0.19 300)">Our answer</div><div style="font-size:15.5px;font-weight:600">Seven conversations a week. No infinite queue</div></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:2px;border-radius:22px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+          <div style="background:oklch(0.975 0.014 300);padding:22px;display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:oklch(0.55 0.02 300)">The problem</div><div style="font-size:15.5px;font-weight:600">Mixed intent shares one interface</div></div>
+          <div style="background:oklch(0.955 0.025 300);padding:22px;display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:oklch(0.5 0.19 300)">Our answer</div><div style="font-size:15.5px;font-weight:600">The format filters itself. A quick swipe won't sit through a conversation</div></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:2px;border-radius:22px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+          <div style="background:oklch(0.975 0.014 300);padding:22px;display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:oklch(0.55 0.02 300)">The problem</div><div style="font-size:15.5px;font-weight:600">Subscriptions are paid to keep you single</div></div>
+          <div style="background:oklch(0.955 0.025 300);padding:22px;display:flex;flex-direction:column;gap:6px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:oklch(0.5 0.19 300)">Our answer</div><div style="font-size:15.5px;font-weight:600">One payment. Built to be left, not billed monthly until you do</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,10vw,110px) clamp(20px,6vw,48px);background:oklch(0.975 0.014 300);text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px">
+    <p style="margin:0;max-width:600px;font-size:19px;line-height:1.6;font-weight:600">The number of people who want a real connection hasn't dropped. The product they were handed did.</p>
+  </section>
+
+  <section style="padding:clamp(60px,11vw,120px) clamp(20px,6vw,48px);display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center">
+    <h2 id="join" style="margin:0;font-size:clamp(26px,4.6vw,38px);font-weight:800;line-height:1.15;max-width:600px">Try the version built to be left.</h2>
+    <form style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:460px;width:100%" onsubmit="event.preventDefault()">
+      <input type="email" required="" placeholder="you@email.com" style="flex:1 1 220px;min-width:0;padding:15px 18px;border-radius:999px;border:1px solid oklch(0.88 0.02 300);font-size:15px;font-family:inherit;background:oklch(0.99 0.004 300);color:oklch(0.22 0.02 300)">
+      <button type="submit" style="flex-shrink:0;background:oklch(0.55 0.19 300);color:#fff;border:none;font-weight:700;font-size:15px;padding:15px 26px;border-radius:999px;cursor:pointer;box-shadow:0 10px 24px -10px oklch(0.5 0.19 300 / 0.6)">Join the waitlist</button>
+    </form>
+  </section>
+
+  <footer style="padding:32px clamp(20px,6vw,48px);border-top:1px solid oklch(0.93 0.015 300);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;font-size:13px;color:oklch(0.55 0.02 300)">
+    <div style="font-weight:800;color:oklch(0.4 0.19 300)">[DatingApp]</div>
+    <div style="display:flex;gap:18px;flex-wrap:wrap">
+      <a href="Landing.dc.html">Home</a>
+      <a href="Features.dc.html">Features</a>
+    </div>
+    <div>&copy; 2026 [DatingApp]</div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>
