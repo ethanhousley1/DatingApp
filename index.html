@@ -3,11 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+<title>[DatingApp] &mdash; Talk first. See them later.</title>
+<meta name="description" content="A blind texting dating app. You start with words. As the conversation deepens, pieces of them come into focus.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,16 +15,21 @@
   a:hover{color:oklch(0.44 0.19 300)}
   @keyframes softFocus{0%{filter:blur(10px)}100%{filter:blur(0px)}}
   @media(min-width:760px){.navlinks{display:flex !important}}
+  @media(max-width:639px){
+    .sticky-cta{display:block !important}
+    body{--sticky-pad:76px}
+  }
 </style>
-</helmet>
+</head>
+<body>
 
 <div style="font-family:'Figtree',ui-sans-serif,system-ui,sans-serif;color:oklch(0.22 0.02 300);background:#fff;overflow-x:hidden">
 
   <nav style="position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:clamp(14px,3vw,20px) clamp(16px,5vw,48px);background:oklch(0.99 0.003 300 / 0.85);backdrop-filter:blur(10px);border-bottom:1px solid oklch(0.93 0.015 300)">
     <div style="font-weight:800;font-size:19px;letter-spacing:-0.01em;color:oklch(0.4 0.19 300)">[DatingApp]</div>
     <div style="display:none;gap:28px;font-weight:600;font-size:15px;color:oklch(0.4 0.02 300)" class="navlinks">
-      <a href="MarketComparison.dc.html">Why we're different</a>
-      <a href="Features.dc.html">Features</a>
+      <a href="why-were-different.html">Why we're different</a>
+      <a href="features.html">Features</a>
     </div>
     <a href="#join" style="flex-shrink:0;background:oklch(0.55 0.19 300);color:#fff;font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;box-shadow:0 8px 20px -8px oklch(0.5 0.19 300 / 0.55)">Join the waitlist</a>
   </nav>
@@ -146,32 +148,15 @@
   <footer style="padding:32px clamp(20px,6vw,48px) calc(32px + var(--sticky-pad,0px));border-top:1px solid oklch(0.93 0.015 300);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;font-size:13px;color:oklch(0.55 0.02 300)">
     <div style="font-weight:800;color:oklch(0.4 0.19 300)">[DatingApp]</div>
     <div style="display:flex;gap:18px;flex-wrap:wrap">
-      <a href="MarketComparison.dc.html">Why we're different</a>
-      <a href="Features.dc.html">Features</a>
+      <a href="why-were-different.html">Why we're different</a>
+      <a href="features.html">Features</a>
     </div>
     <div>&copy; 2026 [DatingApp]</div>
   </footer>
 
-  <sc-if value="{{ showStickyBar }}" hint-placeholder-val="{{ false }}">
-    <div style="position:fixed;bottom:0;left:0;right:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:oklch(0.99 0.003 300 / 0.92);backdrop-filter:blur(10px);border-top:1px solid oklch(0.9 0.02 300);z-index:50">
+  <div class="sticky-cta" style="display:none;position:fixed;bottom:0;left:0;right:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:oklch(0.99 0.003 300 / 0.92);backdrop-filter:blur(10px);border-top:1px solid oklch(0.9 0.02 300);z-index:50">
       <a href="#join" style="display:block;text-align:center;background:oklch(0.55 0.19 300);color:#fff;font-weight:700;font-size:15px;padding:14px;border-radius:999px;box-shadow:0 10px 24px -10px oklch(0.5 0.19 300 / 0.6)">Join the waitlist</a>
     </div>
-  </sc-if>
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  state = { narrow: false };
-  componentDidMount() {
-    this.check = () => this.setState({ narrow: window.innerWidth < 640 });
-    this.check();
-    window.addEventListener('resize', this.check);
-  }
-  componentWillUnmount() { window.removeEventListener('resize', this.check); }
-  renderVals() {
-    return { showStickyBar: this.state.narrow };
-  }
-}
-</script>
 </body>
 </html>

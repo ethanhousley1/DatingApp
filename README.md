@@ -214,16 +214,19 @@ you're ready to meet, and the quality score.
 
 ## Repo contents
 
+- `index.html` — screen 1, the landing page.
+- `why-were-different.html` — screen 2, the market-research / problem page.
+- `features.html` — screen 3.
 - `README.md` — this document.
-- `design-prompt.md` — the brief handed to Claude Design for the three screens.
-- `design/` — the generated Claude Design artboards:
-  - `Landing.dc.html`
-  - `MarketComparison.dc.html` (screen 2, "Why we're different")
-  - `Features.dc.html`
+- `design-prompt.md` — the brief these pages were generated from.
 
-These are `.dc.html` canvas artboards and expect a sibling `support.js` from the
-Claude Design runtime, which is not checked in — they are design source, not a
-deployable site.
+Plain static HTML, no build step. Vercel serves the repo root as-is.
 
-**Note:** the artboards use `[DatingApp]` as the name placeholder; this README uses
-`[AppName]`. Normalize on one token before the real name goes in.
+These began as Claude Design `.dc.html` artboards and were converted in place:
+the canvas runtime (`support.js`, `<x-dc>`, `<helmet>`, `<sc-if>`) is gone, the
+mobile sticky CTA is now a CSS media query, and inter-page links point at the
+deployed filenames. Re-editing them in the Claude Design canvas is no longer
+possible — edit the HTML directly.
+
+**Note:** the pages use `[DatingApp]` as the name placeholder; the prose above
+uses `[AppName]`. Normalize on one token before the real name goes in.
