@@ -80,12 +80,13 @@ market. Copy should sound like a friend explaining why they think you'd like thi
 A market-research page. Make the data legible and calm — informative, not doom-scroll.
 Purple-accented charts and stat cards on white, no red alarm styling.
 
-**Use these figures (all real):**
-- Match Group active users down **37%** year-over-year, March 2026
+**Use these figures (all verified against a primary or named source — link each one):**
+- Annual dating app market revenue fell in 2025 — the **first decline on record**
 - Tinder revenue **−5.2%** in 2025 — its first annual decline ever
 - Bumble revenue **−9.5%** in 2025
-- Tinder paying users fell 9.6M (2024) → **8.8M** (Q4 2025)
-- Average active users per app now **12–15M**, down from 50–70M in 2019–20
+- Match Group paying users **−5%** YoY in Q1 2026, down to 13.5M
+- Tinder monthly active users **−7%** YoY in March 2026 — still falling, but the
+  slowest drop in 31 months (include the caveat; it reads as more credible, not less)
 - **78%** of users report dating app burnout
 - **88%** of men and **90%** of women say they're often or sometimes disappointed by
   people they meet through apps

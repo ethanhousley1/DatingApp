@@ -12,21 +12,28 @@ You earn the picture by earning the conversation.
 
 Dating app usage is falling, and the people still on the apps are tired.
 
-| Signal | Figure |
-| --- | --- |
-| Match Group active users, YoY (Mar 2026) | **−37%** |
-| Tinder revenue, 2025 | **−5.2%** — first annual decline ever |
-| Bumble revenue, 2025 | **−9.5%** |
-| Tinder paying users | 9.6M (2024) → **8.8M** (Q4 2025) |
-| Avg. active users per app | 12–15M (Dec 2025), down from 50–70M in 2019–20 |
-| Report dating app burnout | **78%** |
-| Often/sometimes disappointed by people they meet | **88%** of men, **90%** of women |
-| Experienced at least one unwanted behavior | **48%** |
+| Signal | Figure | Source |
+| --- | --- | --- |
+| Annual dating app market revenue, 2025 | **First decline on record** | [Business of Apps](https://www.businessofapps.com/news/dating-app-market-first-annual-revenue-decline/) |
+| Tinder revenue, 2025 | **−5.2%** — first annual decline ever | [Business of Apps](https://www.businessofapps.com/data/tinder-statistics/) |
+| Bumble revenue, 2025 | **−9.5%** | [Business of Apps](https://www.businessofapps.com/data/dating-app-market/) |
+| Match Group paying users, Q1 2026 | **−5%** YoY, to 13.5M | [Match Group](https://ir.mtch.com/investor-relations/news-events/news-events/news-details/2026/Match-Group-Announces-First-Quarter-Results/default.aspx) |
+| Tinder MAU, March 2026 | **−7%** YoY — still falling, but the slowest drop in 31 months | [Match Group](https://ir.mtch.com/investor-relations/news-events/news-events/news-details/2026/Match-Group-Announces-First-Quarter-Results/default.aspx) |
+| Report dating app burnout | **78%** | [Forbes Health](https://www.forbes.com/health/dating/dating-app-fatigue/) |
+| Often/sometimes disappointed by people they meet | **88%** of men, **90%** of women | [Pew Research](https://www.pewresearch.org/internet/2023/02/02/the-experiences-of-u-s-online-daters/) |
+| Experienced at least one unwanted behavior | **48%** | [Pew Research](https://www.pewresearch.org/internet/2023/02/02/the-experiences-of-u-s-online-daters/) |
+
+> **Two figures were removed after fact-checking.** An earlier draft cited "Match
+> Group active users −37% YoY (Mar 2026)" and "average active users per app
+> 12–15M, down from 50–70M." Neither survives contact with a primary source.
+> Match Group's own Q1 2026 release puts Tinder MAU at −7% YoY in March 2026, the
+> slowest rate of decline in 31 months, with new registrations returning to growth.
+> The decline is real but gradual, and currently decelerating — not a collapse.
 
 ### The Hinge signal — this is the proof, not the caveat
 
-**Hinge grew revenue 25%** with paying users up 31% while the rest of the market fell.
-It is the one product going the other direction, and the two things it did differently
+**Hinge grew revenue 25% in 2025**, and 28% year-over-year in Q1 2026, while the rest
+of the market fell. It is the one product going the other direction, and the two things it did differently
 are exactly the two things we are building on:
 
 1. **"Designed to be deleted."** It positioned success as the user leaving. That
