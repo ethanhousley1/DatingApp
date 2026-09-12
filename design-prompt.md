@@ -1,11 +1,15 @@
-# Prompt for Claude Design
+# Brief given to the AI agent
 
-Copy everything below the line into Claude Design. Replace `[AppName]` first if you
+> Archived. This produced the first version (three marketing pages). The graded
+> write-up in `README.md` records what was wrong with that output and what
+> replaced it: screens 2 and 3 are now product screens, not marketing pages.
+
+Copy everything below the line into Claude Design. Replace `Connections` first if you
 have a name by then.
 
 ---
 
-Design a three-page marketing website for **[AppName]**, a blind texting dating app.
+Design a three-page marketing website for **Connections**, a blind texting dating app.
 You start with words only — no photo, no bio, no grid to swipe. As a conversation
 genuinely deepens, pieces of the other person's profile appear. You earn the picture
 by earning the conversation.
@@ -102,7 +106,7 @@ the page, not a footnote.** Headline idea: "One app is growing. It's worth askin
   an app that bills you monthly is still paid to keep you, and prompts you read
   *before* you ever speak are still a profile you're judged on.
 
-Then a small three-row comparison — Hinge / [AppName]:
+Then a small three-row comparison — Hinge / Connections:
 1. *Designed to be deleted* — positioning on a subscription **vs.** a one-time
    payment, so the business is structurally finished with you.
 2. *Prompts* — questions on a profile you read first **vs.** the conversation itself
@@ -113,7 +117,7 @@ Then a small three-row comparison — Hinge / [AppName]:
 Land it in one line: Hinge showed where the demand went. We don't think it went far
 enough.
 
-**Then four structural reasons, each paired with what [AppName] does instead.**
+**Then four structural reasons, each paired with what Connections does instead.**
 A two-column or stacked "the problem / our answer" pattern works well here:
 
 1. *Appearance is the first and only filter* → we remove the photo until it's earned.
