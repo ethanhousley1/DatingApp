@@ -19,6 +19,7 @@
     .cmp-label{display:block !important;margin-bottom:4px}
     .pa-row{grid-template-columns:1fr !important}
   }
+  @media(min-width:760px){.navlinks{display:flex !important}}
   @media(max-width:639px){
     .sticky-cta{display:block !important}
     body{--sticky-pad:76px}
@@ -31,6 +32,10 @@
 
   <nav style="position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:clamp(14px,3vw,20px) clamp(16px,5vw,48px);background:oklch(0.99 0.003 300 / 0.85);backdrop-filter:blur(10px);border-bottom:1px solid oklch(0.93 0.015 300)">
     <a href="index.html" style="font-weight:800;font-size:19px;letter-spacing:-0.01em;color:oklch(0.4 0.19 300)">[DatingApp]</a>
+    <div style="display:none;gap:28px;font-weight:600;font-size:15px;color:oklch(0.4 0.02 300)" class="navlinks">
+      <a href="why-were-different.html">Why we're different</a>
+      <a href="features.html">Features</a>
+    </div>
     <a href="#join" style="flex-shrink:0;background:oklch(0.55 0.19 300);color:#fff;font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;box-shadow:0 8px 20px -8px oklch(0.5 0.19 300 / 0.55)">Join the waitlist</a>
   </nav>
 
@@ -43,36 +48,44 @@
   <section style="padding:0 clamp(20px,6vw,48px) clamp(56px,9vw,90px);max-width:1080px;margin:0 auto">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
       <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
-        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">&minus;37%</div>
-        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">Match Group active users, year-over-year, March 2026</div>
+        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">First ever</div>
+        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">Annual dating app market revenue fell in 2025 &mdash; the first decline on record</div>
+        <a href="https://www.businessofapps.com/news/dating-app-market-first-annual-revenue-decline/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;padding-top:10px;font-size:11.5px;font-weight:700;letter-spacing:.02em;color:oklch(0.55 0.19 300)">Business of Apps &#8599;</a>
       </div>
       <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
         <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">&minus;5.2%</div>
         <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">Tinder revenue in 2025 &mdash; its first annual decline ever</div>
+        <a href="https://www.businessofapps.com/data/tinder-statistics/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;padding-top:10px;font-size:11.5px;font-weight:700;letter-spacing:.02em;color:oklch(0.55 0.19 300)">Business of Apps &#8599;</a>
       </div>
       <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
         <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">&minus;9.5%</div>
         <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">Bumble revenue in 2025</div>
+        <a href="https://www.businessofapps.com/data/dating-app-market/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;padding-top:10px;font-size:11.5px;font-weight:700;letter-spacing:.02em;color:oklch(0.55 0.19 300)">Business of Apps &#8599;</a>
       </div>
       <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
-        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">9.6M &rarr; 8.8M</div>
-        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">Tinder paying users, 2024 to Q4 2025</div>
+        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">&minus;5%</div>
+        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">Match Group paying users year-over-year in Q1 2026, down to 13.5M</div>
+        <a href="https://ir.mtch.com/investor-relations/news-events/news-events/news-details/2026/Match-Group-Announces-First-Quarter-Results/default.aspx" target="_blank" rel="noopener noreferrer" style="margin-top:auto;padding-top:10px;font-size:11.5px;font-weight:700;letter-spacing:.02em;color:oklch(0.55 0.19 300)">Match Group Q1 2026 &#8599;</a>
       </div>
       <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
-        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">12&ndash;15M</div>
-        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">Average active users per app, down from 50&ndash;70M in 2019&ndash;20</div>
+        <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">&minus;7%</div>
+        <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">Tinder monthly active users, March 2026 &mdash; still falling, though more slowly than a year ago</div>
+        <a href="https://ir.mtch.com/investor-relations/news-events/news-events/news-details/2026/Match-Group-Announces-First-Quarter-Results/default.aspx" target="_blank" rel="noopener noreferrer" style="margin-top:auto;padding-top:10px;font-size:11.5px;font-weight:700;letter-spacing:.02em;color:oklch(0.55 0.19 300)">Match Group Q1 2026 &#8599;</a>
       </div>
       <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
         <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">78%</div>
         <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">of users report dating app burnout</div>
+        <a href="https://www.forbes.com/health/dating/dating-app-fatigue/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;padding-top:10px;font-size:11.5px;font-weight:700;letter-spacing:.02em;color:oklch(0.55 0.19 300)">Forbes Health / OnePoll &#8599;</a>
       </div>
       <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
         <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">88% / 90%</div>
         <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">of men / women often or sometimes disappointed by people they meet on apps</div>
+        <a href="https://www.pewresearch.org/internet/2023/02/02/the-experiences-of-u-s-online-daters/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;padding-top:10px;font-size:11.5px;font-weight:700;letter-spacing:.02em;color:oklch(0.55 0.19 300)">Pew Research Center &#8599;</a>
       </div>
       <div style="background:oklch(0.975 0.014 300);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:6px">
         <div style="font-size:clamp(26px,4vw,34px);font-weight:800;color:oklch(0.5 0.19 300)">48%</div>
         <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.4">of online daters have had at least one unwanted experience</div>
+        <a href="https://www.pewresearch.org/internet/2023/02/02/the-experiences-of-u-s-online-daters/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;padding-top:10px;font-size:11.5px;font-weight:700;letter-spacing:.02em;color:oklch(0.55 0.19 300)">Pew Research Center &#8599;</a>
       </div>
     </div>
   </section>
@@ -108,11 +121,12 @@
             <div style="flex:1;text-align:center"><div style="font-size:11px;color:oklch(0.5 0.02 300)">Tinder</div><div style="font-size:12.5px;font-weight:700;color:oklch(0.45 0.02 300)">&minus;5.2%</div></div>
             <div style="flex:1;text-align:center"><div style="font-size:11px;font-weight:700;color:oklch(0.5 0.19 300)">Hinge</div><div style="font-size:12.5px;font-weight:700;color:oklch(0.5 0.19 300)">+25%</div></div>
           </div>
-          <div style="font-size:12.5px;color:oklch(0.5 0.02 300)">Hinge revenue <strong style="color:oklch(0.5 0.19 300)">+25%</strong> while the category fell.</div>
+          <div style="font-size:12.5px;color:oklch(0.5 0.02 300)">Hinge revenue <strong style="color:oklch(0.5 0.19 300)">+25%</strong> while the category fell. <a href="https://www.businessofapps.com/data/dating-app-market/" target="_blank" rel="noopener noreferrer" style="font-weight:700">Business of Apps &#8599;</a></div>
         </div>
         <div style="background:#fff;border-radius:22px;padding:24px 20px;display:flex;flex-direction:column;gap:10px">
-          <div style="font-size:36px;font-weight:800;color:oklch(0.5 0.19 300)">+31%</div>
-          <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.5">Growth in Hinge paying users, while paying users fell nearly everywhere else.</div>
+          <div style="font-size:36px;font-weight:800;color:oklch(0.5 0.19 300)">+28%</div>
+          <div style="font-size:13.5px;color:oklch(0.45 0.02 300);line-height:1.5">Hinge direct revenue growth in Q1 2026, while Match Group's total paying users fell 5%.</div>
+          <a href="https://ir.mtch.com/investor-relations/news-events/news-events/news-details/2026/Match-Group-Announces-First-Quarter-Results/default.aspx" target="_blank" rel="noopener noreferrer" style="margin-top:auto;padding-top:10px;font-size:11.5px;font-weight:700;letter-spacing:.02em;color:oklch(0.55 0.19 300)">Match Group Q1 2026 &#8599;</a>
         </div>
       </div>
 

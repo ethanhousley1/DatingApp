@@ -13,6 +13,7 @@
   *{box-sizing:border-box}
   a{color:oklch(0.55 0.19 300);text-decoration:none}
   a:hover{color:oklch(0.44 0.19 300)}
+  @media(min-width:760px){.navlinks{display:flex !important}}
   @media(max-width:639px){
     .sticky-cta{display:block !important}
     body{--sticky-pad:76px}
@@ -25,6 +26,10 @@
 
   <nav style="position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:clamp(14px,3vw,20px) clamp(16px,5vw,48px);background:oklch(0.99 0.003 300 / 0.85);backdrop-filter:blur(10px);border-bottom:1px solid oklch(0.93 0.015 300)">
     <a href="index.html" style="font-weight:800;font-size:19px;letter-spacing:-0.01em;color:oklch(0.4 0.19 300)">[DatingApp]</a>
+    <div style="display:none;gap:28px;font-weight:600;font-size:15px;color:oklch(0.4 0.02 300)" class="navlinks">
+      <a href="why-were-different.html">Why we're different</a>
+      <a href="features.html">Features</a>
+    </div>
     <a href="#join" style="flex-shrink:0;background:oklch(0.55 0.19 300);color:#fff;font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;box-shadow:0 8px 20px -8px oklch(0.5 0.19 300 / 0.55)">Join the waitlist</a>
   </nav>
 
