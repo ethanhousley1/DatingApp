@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>[DatingApp] &mdash; Talk first. See them later.</title>
-<meta name="description" content="A blind texting dating app. You start with words. As the conversation deepens, pieces of them come into focus.">
+<title>Connections — Talk first. Be known before you're seen.</title>
+<meta name="description" content="Connections pairs you with seven people a week. Every conversation starts blind. Their photo and bio unlock only as the two of you actually get to know each other.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,150 +13,180 @@
   *{box-sizing:border-box}
   a{color:oklch(0.55 0.19 300);text-decoration:none}
   a:hover{color:oklch(0.44 0.19 300)}
-  @keyframes softFocus{0%{filter:blur(10px)}100%{filter:blur(0px)}}
   @media(min-width:760px){.navlinks{display:flex !important}}
   @media(max-width:639px){
     .sticky-cta{display:block !important}
     body{--sticky-pad:76px}
   }
+  @media(min-width:900px){.hero{grid-template-columns:1.05fr .95fr !important}}
 </style>
 </head>
 <body>
-
 <div style="font-family:'Figtree',ui-sans-serif,system-ui,sans-serif;color:oklch(0.22 0.02 300);background:#fff;overflow-x:hidden">
 
   <nav style="position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:clamp(14px,3vw,20px) clamp(16px,5vw,48px);background:oklch(0.99 0.003 300 / 0.85);backdrop-filter:blur(10px);border-bottom:1px solid oklch(0.93 0.015 300)">
-    <a href="index.html" style="font-weight:800;font-size:19px;letter-spacing:-0.01em;color:oklch(0.4 0.19 300)">[DatingApp]</a>
+    <a href="index.html" style="font-weight:800;font-size:19px;letter-spacing:-0.01em;color:oklch(0.4 0.19 300)">Connections</a>
     <div style="display:none;gap:28px;font-weight:600;font-size:15px;color:oklch(0.4 0.02 300)" class="navlinks">
-      <a href="why-were-different.html">Why we're different</a>
-      <a href="features.html">Features</a>
+      <a href="conversation.html">A conversation</a>
+      <a href="your-week.html">Your week</a>
     </div>
     <a href="#join" style="flex-shrink:0;background:oklch(0.55 0.19 300);color:#fff;font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;box-shadow:0 8px 20px -8px oklch(0.5 0.19 300 / 0.55)">Join the waitlist</a>
   </nav>
 
-  <header style="padding:clamp(40px,9vw,80px) clamp(20px,6vw,48px) clamp(48px,10vw,96px);max-width:1180px;margin:0 auto;display:grid;gap:48px;grid-template-columns:minmax(0,1fr);align-items:center">
-    <div style="max-width:600px;display:flex;flex-direction:column;gap:20px">
-      <h1 style="margin:0;font-size:clamp(32px,6vw,52px);line-height:1.08;font-weight:800;letter-spacing:-0.01em">Talk first. See them later.</h1>
-      <p style="margin:0;font-size:clamp(17px,2.4vw,20px);line-height:1.55;color:oklch(0.42 0.02 300);max-width:34em">No photo, no bio, no grid to swipe. You start with words. As the conversation actually deepens, pieces of them come into focus &mdash; a line, then a photo, sharpening slowly. If you've deleted three dating apps already, this is built for the version of you that did.</p>
-      <form id="join" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px" onsubmit="event.preventDefault()">
-        <input type="email" required="" placeholder="you@email.com" style="flex:1 1 220px;min-width:0;padding:15px 18px;border-radius:999px;border:1px solid oklch(0.88 0.02 300);font-size:15px;font-family:inherit;background:oklch(0.99 0.004 300);color:oklch(0.22 0.02 300)">
+  <!-- ================= HERO ================= -->
+  <header class="hero" style="padding:clamp(40px,8vw,76px) clamp(20px,6vw,48px) clamp(44px,9vw,84px);max-width:1120px;margin:0 auto;display:grid;gap:clamp(32px,5vw,52px);grid-template-columns:minmax(0,1fr);align-items:center">
+
+    <div style="display:flex;flex-direction:column;gap:20px;max-width:34em">
+      <h1 style="margin:0;font-size:clamp(34px,6.4vw,56px);line-height:1.05;font-weight:800;letter-spacing:-0.015em">Talk first.<br>Be known before you&rsquo;re seen.</h1>
+
+      <!-- The affordance sentence. Dominant, above everything else. -->
+      <p style="margin:0;font-size:clamp(17px,2.3vw,20px);line-height:1.5;color:oklch(0.32 0.02 300);font-weight:500">
+        Connections pairs you with <strong style="color:oklch(0.45 0.19 300)">seven people a week</strong>. Every conversation starts blind &mdash; no photo, no bio. Their profile unlocks only as the two of you actually get to know each other.
+      </p>
+
+      <form id="join" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px">
+        <input id="email" type="email" required="" placeholder="you@email.com" style="flex:1 1 220px;min-width:0;padding:15px 18px;border-radius:999px;border:1px solid oklch(0.88 0.02 300);font-size:15px;font-family:inherit;background:oklch(0.99 0.004 300);color:oklch(0.22 0.02 300)">
         <button type="submit" style="flex-shrink:0;background:oklch(0.55 0.19 300);color:#fff;border:none;font-weight:700;font-size:15px;padding:15px 26px;border-radius:999px;cursor:pointer;box-shadow:0 10px 24px -10px oklch(0.5 0.19 300 / 0.6)">Join the waitlist</button>
       </form>
-      <p style="margin:0;font-size:13px;color:oklch(0.55 0.02 300)">Free to start. No spam, one email when we open up.</p>
+      <div id="joined" role="status" style="display:none;font-size:14.5px;font-weight:600;color:oklch(0.45 0.19 300);background:oklch(0.96 0.025 300);border-radius:14px;padding:12px 16px"></div>
+      <p id="joinNote" style="margin:0;font-size:13px;color:oklch(0.55 0.02 300)">Free to start. One email when we open up, nothing else.</p>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
+        <a href="conversation.html" style="font-weight:700;font-size:14.5px;border:1px solid oklch(0.85 0.05 300);border-radius:999px;padding:11px 18px">See a conversation &rarr;</a>
+        <a href="your-week.html" style="font-weight:700;font-size:14.5px;border:1px solid oklch(0.85 0.05 300);border-radius:999px;padding:11px 18px">See your week &rarr;</a>
+      </div>
     </div>
 
-    <div style="display:flex;justify-content:center;align-items:flex-start;flex-wrap:wrap;gap:24px;max-width:560px;width:100%;margin:0 auto;padding:12px 0">
-      <div style="width:min(30%,190px);transform:rotate(-6deg) translateY(14px);background:#fff;border-radius:22px;box-shadow:0 24px 48px -26px oklch(0.4 0.05 300 / 0.4);border:1px solid oklch(0.93 0.015 300);padding:14px;display:flex;flex-direction:column;gap:9px;z-index:1">
-        <div style="display:flex;align-items:center;gap:7px;padding-bottom:7px;border-bottom:1px solid oklch(0.94 0.01 300)">
-          <div style="width:24px;height:24px;border-radius:50%;background:oklch(0.93 0.02 300)"></div>
-          <div style="font-weight:700;font-size:11px;color:oklch(0.5 0.02 300)">Blind convo</div>
-        </div>
-        <div style="align-self:flex-start;background:oklch(0.95 0.025 300);border-radius:14px 14px 14px 4px;padding:7px 10px;font-size:11.5px;max-width:95%">worst thing you've ever cooked?</div>
-        <div style="align-self:flex-end;background:oklch(0.55 0.19 300);color:#fff;border-radius:14px 14px 4px 14px;padding:7px 10px;font-size:11.5px;max-width:95%">rice. every time.</div>
+    <!-- One picture of the mechanic: blind on the left, earned on the right -->
+    <div style="display:flex;flex-direction:column;gap:12px;background:oklch(0.975 0.014 300);border-radius:26px;padding:clamp(16px,3vw,24px)">
+      <div style="display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:oklch(0.55 0.02 300)">
+        <span>Message 1</span><span style="color:oklch(0.5 0.19 300)">Message 40</span>
       </div>
-
-      <div style="width:min(34%,210px);transform:rotate(4deg) translateY(-8px);background:#fff;border-radius:22px;box-shadow:0 24px 48px -26px oklch(0.4 0.05 300 / 0.4);border:1px solid oklch(0.93 0.015 300);padding:14px;display:flex;flex-direction:column;gap:9px;z-index:3">
-        <div style="display:flex;align-items:center;gap:7px;padding-bottom:7px;border-bottom:1px solid oklch(0.94 0.01 300)">
-          <div style="width:24px;height:24px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,oklch(0.9 0.03 300),oklch(0.8 0.05 300));filter:blur(2px)"></div>
-          <div style="font-weight:700;font-size:11px;color:oklch(0.5 0.02 300)">First fragment</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div style="background:#fff;border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:9px">
+          <div style="width:100%;aspect-ratio:1/1;border-radius:13px;overflow:hidden"><div style="width:125%;height:125%;margin:-12.5% 0 0 -12.5%;background:linear-gradient(150deg,oklch(0.84 0.06 300),oklch(0.6 0.15 300));filter:blur(16px)"></div></div>
+          <div style="font-weight:700;font-size:13px;color:oklch(0.5 0.02 300)">Someone</div>
+          <div style="height:7px;border-radius:999px;background:oklch(0.93 0.02 300)"></div>
+          <div style="height:7px;width:70%;border-radius:999px;background:oklch(0.93 0.02 300)"></div>
         </div>
-        <div style="align-self:flex-start;background:oklch(0.95 0.025 300);border-radius:14px 14px 14px 4px;padding:7px 10px;font-size:11.5px;max-width:95%">useless skill you're proud of?</div>
-        <div style="align-self:flex-end;background:oklch(0.55 0.19 300);color:#fff;border-radius:14px 14px 4px 14px;padding:7px 10px;font-size:11.5px;max-width:95%">parallel park, first try, always</div>
-        <div style="align-self:center;font-size:10px;color:oklch(0.5 0.19 300);font-weight:700;text-align:center">+ their bio line appeared</div>
+        <div style="background:#fff;border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:9px">
+          <div style="width:100%;aspect-ratio:1/1;border-radius:13px;background:linear-gradient(150deg,oklch(0.84 0.06 300),oklch(0.6 0.15 300))"></div>
+          <div style="font-weight:700;font-size:13px;color:oklch(0.4 0.19 300)">Maya</div>
+          <div style="font-size:12px;line-height:1.4;color:oklch(0.42 0.02 300)">Moved here for a job. Left the job. Stayed anyway.</div>
+        </div>
       </div>
-
-      <div style="width:min(28%,180px);transform:rotate(-3deg) translateY(20px);background:#fff;border-radius:22px;box-shadow:0 24px 48px -26px oklch(0.4 0.05 300 / 0.4);border:1px solid oklch(0.93 0.015 300);padding:14px;display:flex;flex-direction:column;gap:8px;z-index:2">
-        <div style="width:100%;aspect-ratio:16/10;border-radius:12px;background:repeating-linear-gradient(-45deg,oklch(0.94 0.02 300),oklch(0.94 0.02 300) 6px,oklch(0.97 0.012 300) 6px,oklch(0.97 0.012 300) 12px);filter:blur(6px);display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:9px;color:oklch(0.55 0.02 300)">resolving</div>
-        <div style="font-size:10.5px;color:oklch(0.55 0.02 300);text-align:center">3 exchanges to go</div>
+      <div style="display:flex;flex-direction:column;gap:8px;background:#fff;border-radius:18px;padding:14px">
+        <div style="align-self:flex-start;background:oklch(0.95 0.025 300);border-radius:14px 14px 14px 4px;padding:8px 12px;font-size:12.5px;max-width:92%">what keeps you up at night</div>
+        <div style="align-self:flex-end;background:oklch(0.55 0.19 300);color:#fff;border-radius:14px 14px 4px 14px;padding:8px 12px;font-size:12.5px;max-width:92%">wondering if I picked the right city</div>
       </div>
     </div>
   </header>
 
-  <section style="padding:clamp(56px,10vw,110px) clamp(20px,6vw,48px);max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:18px;text-align:center">
-    <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.55 0.19 300)">Philosophy</div>
-    <h2 style="margin:0;font-size:clamp(26px,4.4vw,36px);font-weight:800;line-height:1.15">Mystery isn't a bug in meeting someone. It's most of the fun.</h2>
-    <p style="margin:0;font-size:17px;line-height:1.65;color:oklch(0.42 0.02 300)">Part of why meeting someone new is exciting is that they're new, funny in a way you can't predict yet, and a little mysterious. A profile deletes all three before a single word is exchanged. We just give the mystery back &mdash; on purpose, and only for as long as it takes to earn your way past it.</p>
-  </section>
-
-  <section style="padding:clamp(56px,10vw,110px) clamp(20px,6vw,48px);background:oklch(0.975 0.014 300);display:flex;flex-direction:column;gap:clamp(32px,6vw,56px);align-items:center">
-    <div style="max-width:640px;text-align:center;display:flex;flex-direction:column;gap:14px">
-      <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.55 0.19 300)">How the reveal works</div>
-      <h2 style="margin:0;font-size:clamp(26px,4.4vw,36px);font-weight:800;line-height:1.15">Nothing is unlocked until you both mean it.</h2>
-      <p style="margin:0;font-size:16.5px;line-height:1.6;color:oklch(0.42 0.02 300)">It's mutual, every time. Neither of you can unlock the other alone &mdash; the door only opens from both sides at once.</p>
+  <!-- ================= HOW IT WORKS ================= -->
+  <section style="padding:clamp(52px,9vw,100px) clamp(20px,6vw,48px);background:oklch(0.975 0.014 300);display:flex;flex-direction:column;gap:clamp(28px,5vw,48px);align-items:center">
+    <div style="max-width:620px;text-align:center;display:flex;flex-direction:column;gap:12px">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.55 0.19 300)">How it works</div>
+      <h2 style="margin:0;font-size:clamp(25px,4.2vw,34px);font-weight:800;line-height:1.15">Nothing unlocks until you both mean it.</h2>
+      <p style="margin:0;font-size:16.5px;line-height:1.6;color:oklch(0.42 0.02 300)">Reveals are mutual. Neither of you can unlock the other alone, and sending more messages does nothing &mdash; asking something back is what moves it.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;max-width:1040px;width:100%">
-      <div style="background:#fff;border-radius:22px;padding:22px 18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 20px 40px -28px oklch(0.4 0.05 300 / 0.3)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:16px;max-width:1000px;width:100%">
+      <div style="background:#fff;border-radius:22px;padding:20px 18px;display:flex;flex-direction:column;gap:11px">
         <div style="font-size:12px;font-weight:700;color:oklch(0.55 0.19 300)">STEP 1</div>
-        <div style="width:100%;aspect-ratio:1/1;border-radius:14px;background:oklch(0.9 0.02 300)"></div>
+        <div style="width:100%;aspect-ratio:1/1;border-radius:14px;overflow:hidden"><div style="width:125%;height:125%;margin:-12.5% 0 0 -12.5%;background:linear-gradient(150deg,oklch(0.84 0.06 300),oklch(0.6 0.15 300));filter:blur(18px)"></div></div>
         <div style="font-weight:700;font-size:14.5px">Text only</div>
         <div style="font-size:13px;color:oklch(0.48 0.02 300);line-height:1.5">Just the conversation. Nothing to look at yet.</div>
       </div>
-      <div style="background:#fff;border-radius:22px;padding:22px 18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 20px 40px -28px oklch(0.4 0.05 300 / 0.3)">
+      <div style="background:#fff;border-radius:22px;padding:20px 18px;display:flex;flex-direction:column;gap:11px">
         <div style="font-size:12px;font-weight:700;color:oklch(0.55 0.19 300)">STEP 2</div>
-        <div style="width:100%;aspect-ratio:1/1;border-radius:14px;background:oklch(0.9 0.02 300);filter:blur(9px)"></div>
-        <div style="font-weight:700;font-size:14.5px">First fragments</div>
-        <div style="font-size:13px;color:oklch(0.48 0.02 300);line-height:1.5">A line of bio. A blurred sliver of a photo.</div>
+        <div style="width:100%;aspect-ratio:1/1;border-radius:14px;overflow:hidden"><div style="width:125%;height:125%;margin:-12.5% 0 0 -12.5%;background:linear-gradient(150deg,oklch(0.84 0.06 300),oklch(0.6 0.15 300));filter:blur(11px)"></div></div>
+        <div style="font-weight:700;font-size:14.5px">First fragment</div>
+        <div style="font-size:13px;color:oklch(0.48 0.02 300);line-height:1.5">One line of who they are. The photo starts to resolve.</div>
       </div>
-      <div style="background:#fff;border-radius:22px;padding:22px 18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 20px 40px -28px oklch(0.4 0.05 300 / 0.3)">
+      <div style="background:#fff;border-radius:22px;padding:20px 18px;display:flex;flex-direction:column;gap:11px">
         <div style="font-size:12px;font-weight:700;color:oklch(0.55 0.19 300)">STEP 3</div>
-        <div style="width:100%;aspect-ratio:1/1;border-radius:14px;background:oklch(0.9 0.02 300);filter:blur(3px)"></div>
+        <div style="width:100%;aspect-ratio:1/1;border-radius:14px;overflow:hidden"><div style="width:125%;height:125%;margin:-12.5% 0 0 -12.5%;background:linear-gradient(150deg,oklch(0.84 0.06 300),oklch(0.6 0.15 300));filter:blur(4px)"></div></div>
         <div style="font-weight:700;font-size:14.5px">Coming into focus</div>
         <div style="font-size:13px;color:oklch(0.48 0.02 300);line-height:1.5">More resolves as the conversation gets more honest.</div>
       </div>
-      <div style="background:#fff;border-radius:22px;padding:22px 18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 20px 40px -28px oklch(0.4 0.05 300 / 0.3)">
+      <div style="background:#fff;border-radius:22px;padding:20px 18px;display:flex;flex-direction:column;gap:11px">
         <div style="font-size:12px;font-weight:700;color:oklch(0.55 0.19 300)">STEP 4</div>
-        <div style="width:100%;aspect-ratio:1/1;border-radius:14px;background:linear-gradient(135deg,oklch(0.75 0.13 300),oklch(0.6 0.17 300))"></div>
-        <div style="font-weight:700;font-size:14.5px">Full reveal</div>
+        <div style="width:100%;aspect-ratio:1/1;border-radius:14px;background:linear-gradient(150deg,oklch(0.84 0.06 300),oklch(0.6 0.15 300))"></div>
+        <div style="font-weight:700;font-size:14.5px">Unlocked</div>
         <div style="font-size:13px;color:oklch(0.48 0.02 300);line-height:1.5">Earned by both of you, at the same time.</div>
       </div>
     </div>
+    <a href="conversation.html" style="font-weight:700;font-size:15.5px">Try it on a real conversation &rarr;</a>
   </section>
 
-  <section style="padding:clamp(56px,10vw,110px) clamp(20px,6vw,48px);max-width:1040px;margin:0 auto;display:grid;gap:clamp(32px,6vw,56px);grid-template-columns:minmax(0,1fr);align-items:center">
-    <div style="display:flex;flex-direction:column;gap:16px;max-width:640px">
-      <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.55 0.19 300)">How to get the most out of it</div>
-      <h2 style="margin:0;font-size:clamp(26px,4.4vw,34px);font-weight:800;line-height:1.15">Ask, don't just answer.</h2>
-      <p style="margin:0;font-size:16.5px;line-height:1.65;color:oklch(0.42 0.02 300)">Talking honestly means actually trying to know someone, not spamming messages to farm a reveal. Doing that raises your private quality score &mdash; which quietly earns you more conversations a week, faster reveals, and pairing with people who also show up honestly.</p>
+  <!-- ================= WHY IT EXISTS (supporting) ================= -->
+  <section style="padding:clamp(52px,9vw,100px) clamp(20px,6vw,48px);max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:26px">
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:40em">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.55 0.19 300)">Why it exists</div>
+      <h2 style="margin:0;font-size:clamp(25px,4.2vw,34px);font-weight:800;line-height:1.15">The people still looking are the ones getting buried.</h2>
+      <p style="margin:0;font-size:16.5px;line-height:1.65;color:oklch(0.42 0.02 300)">Part of why meeting someone is exciting is that they&rsquo;re new, funny in a way you can&rsquo;t predict, and a little mysterious. A profile deletes all three before a word is exchanged. We give that back on purpose &mdash; and only for as long as it takes to earn your way past it.</p>
     </div>
-    <div style="background:oklch(0.975 0.014 300);border-radius:24px;padding:clamp(20px,4vw,28px);display:flex;flex-direction:column;gap:14px;max-width:520px">
-      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:700;font-size:14px">Your quality score</span><span style="font-size:12px;color:oklch(0.55 0.02 300)">private, only you see this</span></div>
-      <div style="height:12px;border-radius:999px;background:oklch(0.9 0.02 300);overflow:hidden"><div style="width:72%;height:100%;background:linear-gradient(90deg,oklch(0.65 0.17 300),oklch(0.5 0.19 300));border-radius:999px"></div></div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:12.5px;color:oklch(0.45 0.02 300)">
-        <span style="background:#fff;padding:6px 12px;border-radius:999px">+ asking real questions</span>
-        <span style="background:#fff;padding:6px 12px;border-radius:999px">+ two-sided depth</span>
-        <span style="background:#fff;padding:6px 12px;border-radius:999px">&minus; message spam</span>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px">
+      <div style="background:oklch(0.975 0.014 300);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:5px">
+        <div style="font-size:26px;font-weight:800;color:oklch(0.5 0.19 300)">78%</div>
+        <div style="font-size:13px;color:oklch(0.45 0.02 300);line-height:1.4">of users report dating app burnout</div>
+        <a href="https://www.forbes.com/health/dating/dating-app-fatigue/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;padding-top:8px;font-size:11.5px;font-weight:700">Forbes Health &#8599;</a>
+      </div>
+      <div style="background:oklch(0.975 0.014 300);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:5px">
+        <div style="font-size:26px;font-weight:800;color:oklch(0.5 0.19 300)">88% / 90%</div>
+        <div style="font-size:13px;color:oklch(0.45 0.02 300);line-height:1.4">of men / women often or sometimes disappointed by people they meet on apps</div>
+        <a href="https://www.pewresearch.org/internet/2023/02/02/the-experiences-of-u-s-online-daters/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;padding-top:8px;font-size:11.5px;font-weight:700">Pew Research &#8599;</a>
+      </div>
+      <div style="background:oklch(0.975 0.014 300);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:5px">
+        <div style="font-size:26px;font-weight:800;color:oklch(0.5 0.19 300)">First ever</div>
+        <div style="font-size:13px;color:oklch(0.45 0.02 300);line-height:1.4">annual decline in dating app market revenue, 2025</div>
+        <a href="https://www.businessofapps.com/news/dating-app-market-first-annual-revenue-decline/" target="_blank" rel="noopener noreferrer" style="margin-top:auto;padding-top:8px;font-size:11.5px;font-weight:700">Business of Apps &#8599;</a>
       </div>
     </div>
   </section>
 
-  <section style="padding:clamp(56px,10vw,110px) clamp(20px,6vw,48px);background:oklch(0.975 0.014 300);display:flex;flex-direction:column;align-items:center;gap:24px">
-    <div style="max-width:560px;text-align:center;display:flex;flex-direction:column;gap:16px">
+  <!-- ================= PRICING ================= -->
+  <section style="padding:clamp(52px,9vw,100px) clamp(20px,6vw,48px);background:oklch(0.975 0.014 300);display:flex;flex-direction:column;align-items:center;gap:16px">
+    <div style="max-width:560px;text-align:center;display:flex;flex-direction:column;gap:14px">
       <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.55 0.19 300)">Pricing</div>
-      <h2 style="margin:0;font-size:clamp(26px,4.4vw,34px);font-weight:800;line-height:1.15">Free to try. Then one payment, not a subscription.</h2>
-      <p style="margin:0;font-size:16.5px;line-height:1.65;color:oklch(0.42 0.02 300)">We don't want you here forever. Leaving because you met someone is the intended ending, not a failure to retain you. The price will be reasonable &mdash; we'll share the number when we open up.</p>
+      <h2 style="margin:0;font-size:clamp(24px,4vw,32px);font-weight:800;line-height:1.15">Free to try. Then one payment, not a subscription.</h2>
+      <p style="margin:0;font-size:16.5px;line-height:1.65;color:oklch(0.42 0.02 300)">We don&rsquo;t want you here forever. Leaving because you met someone is the intended ending, not a failure to retain you. The price will be reasonable &mdash; we&rsquo;ll share the number when we open up.</p>
     </div>
   </section>
 
-  <section style="padding:clamp(60px,11vw,120px) clamp(20px,6vw,48px);display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center">
-    <h2 style="margin:0;font-size:clamp(26px,4.6vw,38px);font-weight:800;line-height:1.15;max-width:600px">Come talk to someone before you see them.</h2>
-    <form style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:460px;width:100%" onsubmit="event.preventDefault()">
-      <input type="email" required="" placeholder="you@email.com" style="flex:1 1 220px;min-width:0;padding:15px 18px;border-radius:999px;border:1px solid oklch(0.88 0.02 300);font-size:15px;font-family:inherit;background:oklch(0.99 0.004 300);color:oklch(0.22 0.02 300)">
-      <button type="submit" style="flex-shrink:0;background:oklch(0.55 0.19 300);color:#fff;border:none;font-weight:700;font-size:15px;padding:15px 26px;border-radius:999px;cursor:pointer;box-shadow:0 10px 24px -10px oklch(0.5 0.19 300 / 0.6)">Join the waitlist</button>
-    </form>
+  <section style="padding:clamp(56px,10vw,110px) clamp(20px,6vw,48px);display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center">
+    <h2 style="margin:0;font-size:clamp(25px,4.4vw,36px);font-weight:800;line-height:1.15;max-width:580px">Come talk to someone before you see them.</h2>
+    <a href="#join" style="background:oklch(0.55 0.19 300);color:#fff;font-weight:700;font-size:15px;padding:15px 30px;border-radius:999px;box-shadow:0 10px 24px -10px oklch(0.5 0.19 300 / 0.6)">Join the waitlist</a>
   </section>
 
-  <footer style="padding:32px clamp(20px,6vw,48px) calc(32px + var(--sticky-pad,0px));border-top:1px solid oklch(0.93 0.015 300);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;font-size:13px;color:oklch(0.55 0.02 300)">
-    <div style="font-weight:800;color:oklch(0.4 0.19 300)">[DatingApp]</div>
+  <footer style="padding:30px clamp(20px,6vw,48px) calc(30px + var(--sticky-pad,0px));border-top:1px solid oklch(0.93 0.015 300);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;font-size:13px;color:oklch(0.55 0.02 300)">
+    <a href="index.html" style="font-weight:800;color:oklch(0.4 0.19 300)">Connections</a>
     <div style="display:flex;gap:18px;flex-wrap:wrap">
-      <a href="why-were-different.html">Why we're different</a>
-      <a href="features.html">Features</a>
+      <a href="conversation.html">A conversation</a>
+      <a href="your-week.html">Your week</a>
     </div>
-    <div>&copy; 2026 [DatingApp]</div>
+    <div>&copy; 2026 Connections</div>
   </footer>
 
   <div class="sticky-cta" style="display:none;position:fixed;bottom:0;left:0;right:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:oklch(0.99 0.003 300 / 0.92);backdrop-filter:blur(10px);border-top:1px solid oklch(0.9 0.02 300);z-index:50">
-      <a href="#join" style="display:block;text-align:center;background:oklch(0.55 0.19 300);color:#fff;font-weight:700;font-size:15px;padding:14px;border-radius:999px;box-shadow:0 10px 24px -10px oklch(0.5 0.19 300 / 0.6)">Join the waitlist</a>
-    </div>
+    <a href="#join" style="display:block;text-align:center;background:oklch(0.55 0.19 300);color:#fff;font-weight:700;font-size:15px;padding:14px;border-radius:999px;box-shadow:0 10px 24px -10px oklch(0.5 0.19 300 / 0.6)">Join the waitlist</a>
+  </div>
 </div>
+
+<script>
+(function(){
+  var form = document.getElementById('join');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = document.getElementById('email').value.trim();
+    if (!email) return;
+    var ok = document.getElementById('joined');
+    ok.textContent = "You're on the list. We'll email " + email + " once, when we open up.";
+    ok.style.display = 'block';
+    form.style.display = 'none';
+    document.getElementById('joinNote').style.display = 'none';
+    ok.focus && ok.focus();
+  });
+})();
+</script>
 </body>
 </html>

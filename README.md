@@ -1,239 +1,100 @@
-# [AppName]
+# Connections
 
-> Placeholder name. Every occurrence of `[AppName]` is a find-and-replace token.
+A blind texting app. You get seven conversations a week, each one starting with no photo and no bio. The other person's profile unlocks only as the two of you actually get to know each other.
 
-A blind texting app. You start with words only — no photo, no bio, no grid to swipe.
-As a conversation genuinely deepens, pieces of the other person's profile appear.
-You earn the picture by earning the conversation.
+**Live prototype:** https://dating-app-nine-chi.vercel.app
+**Repo:** https://github.com/ethanhousley1/DatingApp
 
 ---
 
-## 1. The problem
+## 1. Concept
 
-Dating app usage is falling, and the people still on the apps are tired.
-
-| Signal | Figure | Source |
-| --- | --- | --- |
-| Annual dating app market revenue, 2025 | **First decline on record** | [Business of Apps](https://www.businessofapps.com/news/dating-app-market-first-annual-revenue-decline/) |
-| Tinder revenue, 2025 | **−5.2%** — first annual decline ever | [Business of Apps](https://www.businessofapps.com/data/tinder-statistics/) |
-| Bumble revenue, 2025 | **−9.5%** | [Business of Apps](https://www.businessofapps.com/data/dating-app-market/) |
-| Match Group paying users, Q1 2026 | **−5%** YoY, to 13.5M | [Match Group](https://ir.mtch.com/investor-relations/news-events/news-events/news-details/2026/Match-Group-Announces-First-Quarter-Results/default.aspx) |
-| Tinder MAU, March 2026 | **−7%** YoY — still falling, but the slowest drop in 31 months | [Match Group](https://ir.mtch.com/investor-relations/news-events/news-events/news-details/2026/Match-Group-Announces-First-Quarter-Results/default.aspx) |
-| Report dating app burnout | **78%** | [Forbes Health](https://www.forbes.com/health/dating/dating-app-fatigue/) |
-| Often/sometimes disappointed by people they meet | **88%** of men, **90%** of women | [Pew Research](https://www.pewresearch.org/internet/2023/02/02/the-experiences-of-u-s-online-daters/) |
-| Experienced at least one unwanted behavior | **48%** | [Pew Research](https://www.pewresearch.org/internet/2023/02/02/the-experiences-of-u-s-online-daters/) |
-
-> **Two figures were removed after fact-checking.** An earlier draft cited "Match
-> Group active users −37% YoY (Mar 2026)" and "average active users per app
-> 12–15M, down from 50–70M." Neither survives contact with a primary source.
-> Match Group's own Q1 2026 release puts Tinder MAU at −7% YoY in March 2026, the
-> slowest rate of decline in 31 months, with new registrations returning to growth.
-> The decline is real but gradual, and currently decelerating — not a collapse.
-
-### The Hinge signal — this is the proof, not the caveat
-
-**Hinge grew revenue 25% in 2025**, and 28% year-over-year in Q1 2026, while the rest
-of the market fell. It is the one product going the other direction, and the two things it did differently
-are exactly the two things we are building on:
-
-1. **"Designed to be deleted."** It positioned success as the user leaving. That
-   promise is why people trust it — but it sits on top of a monthly subscription,
-   which is paid to keep you. The promise and the business model disagree.
-2. **Prompts instead of a blank profile.** People connect over a specific, revealing
-   answer, not a headline. Hinge proved that a structured question gets more honesty
-   out of someone than an open text box ever will.
-
-[AppName] takes both further and removes the contradiction:
-
-| | Hinge | [AppName] |
-| --- | --- | --- |
-| Designed to be deleted | Positioning, on a subscription | **A one-time payment.** The business is structurally finished with you. |
-| Prompts | Prompts on the profile, read before contact | **The conversation is the profile.** Nothing to read first. |
-| Photos | First thing you see | **Earned, mutually, through real conversation** |
-
-The collapse is in the swipe economy, not in the desire to meet someone. Hinge shows
-where the demand went. We think it doesn't go far enough.
-
-### Why the current model fails the people we care about
-
-- **Appearance is the first and only filter.** Everything else about a person is
-  ranked below a photo, so everything else about a person loses.
-- **Abundance kills investment.** When the next profile is free, no conversation is
-  worth saving.
-- **Mixed intent, one interface.** Hookups, validation-seeking, marketing accounts,
-  and people actually looking for a partner all share the same grid. The last group
-  gets buried.
-- **You get nothing when it doesn't work.** A bad date or a dead thread costs hours
-  and returns zero. The loop is: see attractive person → swipe → talk → maybe meet →
-  repeat. It's a dopamine cycle, not a path anywhere.
-- **Subscriptions are paid to keep you single.** A recurring revenue model needs you
-  to come back. Success for the user is churn. Even the app that markets itself as
-  "designed to be deleted" bills you monthly until you do.
-
-## 2. Who it's for
-
-- People who have tried dating apps, decided "this isn't for me," and left.
-- People who struggle to meet anyone in person and know it.
-- People who want an introduction — a nudge, the way a friend introduces you — so
-  that starting a conversation doesn't feel like an audition.
-- People who are more interesting than they are photogenic, and know that too.
-
-They are not looking for more options. They are looking for one real one.
-
-## 3. Why this over the alternatives
-
-**Over traditional dating apps:** it's a more natural, organic order of events —
-talk first, then see. Attempting and conversing is rewarded instead of scrolling.
-No ranking by face.
-
-**Over meeting people in person:** it's far less time-consuming. You get the
-serendipity of meeting a stranger without needing to leave the house or spend a
-whole evening to find out it isn't a fit.
-
-## 4. The value
-
-Part of why meeting someone is exciting is that they're new, fun, and a little
-mysterious. A profile deletes all three before a word is exchanged. This app gives
-mystery back, on purpose.
-
-Yes, the reveal is a dopamine mechanic — but it's pointed at the right behavior.
-The hit comes from learning about a person, not from a face appearing in a grid.
-
-## 5. How it works
-
-### Matching — a weekly allowance
-
-- You receive a set number of new blind conversations per week (**starting point: 7**;
-  cadence is tunable).
-- No browsing, no grid, no infinite queue. Scarcity is the feature — when you only
-  get seven, you actually show up for them.
-- A conversation opens as text only: no photo, no name card, no bio.
-
-### The reveal — mutual, earned by depth
-
-Reveals unlock on **conversation depth, and only mutually**. Neither person can
-unlock the other by themselves, and nobody can grind their way to a photo alone.
-
-What counts as depth is two-sided participation: **asking questions as well as
-answering them.** Trying to actually get to know someone — not spamming messages to
-farm a reward. Volume alone does not move the needle.
-
-Rough progression (numbers are illustrative, not final):
-
-1. **Text only.** A conversation, nothing else.
-2. **First fragments.** A piece of the bio, or a partial/blurred image.
-3. **More of the profile.** Bio fills in, more of the picture resolves.
-4. **Full reveal.** Everything, plus the option to take it off the app.
-
-### Quality score — "honest talking = more freedom"
-
-A quality metric rises when you engage in good faith and falls when you don't. It is
-a measure of how you talk, not of how attractive you are.
-
-Higher quality unlocks:
-- **More people per week** — a larger weekly allowance.
-- **Faster access to bio and photos** — thresholds come down for you.
-- **Early fragments** — occasionally seeing part of an image or bio sooner.
-- **Better pairing** — high-quality conversationalists get matched with each other.
-
-That last one is the real prize: the reward for being genuine is being matched with
-other people who are genuine.
-
-### Pricing — built to be left
-
-Free trial, then a **one-time payment**. Not a subscription.
-
-We do not want you here forever. A one-time price means the business isn't paid to
-keep you swiping, and leaving because you met someone is the intended ending.
-The number is deliberately not shown yet; it will be reasonable.
-
-## 6. The three screens
-
-Design comes later. This is the content spec.
-
-### Screen 1 — Landing
-- **Hero:** one-line explanation of the app, message-thread mockups as the primary
-  visual, primary CTA → **Join the waitlist**.
-- **Below the fold:**
-  - Philosophy — why talking first, why mystery is worth protecting.
-  - How the bio and picture reveal works (visualized as a progression).
-  - How to get the most out of it: talk honestly, ask questions → more freedom.
-  - Pricing: free trial → one-time payment, framed as "we want you to leave."
-
-### Screen 2 — What's wrong with dating apps
-Market research made legible. The decline figures, the burnout numbers, the
-structural reasons (appearance-first, abundance, mixed intent, subscription
-incentives), each paired with what [AppName] does instead.
-
-### Screen 3 — Features
-How conversations are found (the weekly allowance), the reveal system in detail,
-chatting, icebreakers, in-conversation games, fun in-person activity ideas for when
-you're ready to meet, and the quality score.
-
-## 7. Design direction
-
-- **Color:** white and purple. White-dominant, purple as accent and emphasis;
-  soft lavender tints for surfaces.
-- **Feel:** soft, rounded, friendly — generous corner radii, gentle shadows, chat
-  bubbles as the recurring motif. It should lower anxiety, not raise stakes.
-- **Type:** highly readable. A humanist sans at comfortable sizes and line height.
-- **Voice:** warm and plainspoken. Calm, human, low-hype, no bravado. Speaks to
-  someone who is a little nervous about all of this.
-- **Format:** marketing website, **mobile-first**, responsive up to desktop.
-
-## 8. Decisions locked
-
-| Decision | Choice |
+| | |
 | --- | --- |
-| Name | Placeholder `[AppName]` |
-| Reveal trigger | Conversation depth, mutual only |
-| Matching | ~7 new conversations per week |
-| Reward | More people/week, faster reveals, early fragments, better pairing |
-| Pricing | Free trial → one-time payment, price not shown |
-| CTA | Join the waitlist |
-| Voice | Warm, plainspoken |
-| Visual | Soft, rounded, friendly; white + purple |
-| Platform | Mobile-first marketing site |
+| **Need** | Meeting someone new means being judged on a photo before anyone hears a word, so people who are better in conversation than in pictures get filtered out before they can say anything. |
+| **Persona** | Has deleted at least one dating app, goes weeks at a time without meeting anyone new, and would rather open a text thread than walk up to a stranger. |
+| **Capability** | Hold a real conversation with a matched stranger before seeing their photo. |
+| **Value** | **Being known.** After a stretch on dating apps you feel processed, not known — sorted by a face into yes or no. Here the first thing anyone learns about you is how you actually talk. |
 
-## 9. Parked ideas
+The affordance sentence, and the dominant thing a first-time visitor meets:
 
-- **Daily prompt pairing.** Everyone answers the same daily question; you're paired
-  with someone whose answer resonated. Conversations start with substance instead of
-  a blank box. Strong candidate — either as an alternate matching mode or as a daily
-  layer on top of the weekly allowance. This is the natural extension of what Hinge
-  proved about prompts: we'd use them to *start the conversation* rather than to
-  decorate a profile you read before ever speaking.
-- Earned currency ("keys") spent to reveal — rejected for now as too transactional.
-- Visible public reputation score — rejected for now; scoring people in public is
-  the thing we're trying to get away from. Keep the metric private.
-- Voice notes as a mid-stage reveal, between text and photo.
+> **Connections pairs you with seven people a week. Every conversation starts blind — no photo, no bio. Their profile unlocks only as the two of you actually get to know each other.**
 
-## 10. Open questions
+## 2. The three screens
 
-- Does the quality score's effect on pairing need to be visible to users, or does
-  explaining it invite gaming?
-- What happens to unused weekly conversations — do they expire, roll over, or is
-  expiry itself part of the pressure to engage?
-- Does a conversation ever time out if one side goes quiet?
-- Is there a floor on reveals — e.g. a safety-motivated photo check before meeting?
+| Screen | Its one job | Why it earned the slot | Design question it tests |
+| --- | --- | --- | --- |
+| **Landing** (`index.html`) | Signal the capability and the value before anything is read | It is the only screen a first-time user is guaranteed to see, and the whole idea fails if "you talk before you see them" doesn't land in five seconds | Does the value read pre-attentively, or does it need the paragraph? |
+| **A conversation** (`conversation.html`) | Let you *do* the capability | The capability is a conversation, so the only honest demonstration is a conversation you can drive. Send replies and the profile resolves in front of you | Does the interaction teach the rule — asking back unlocks, volume doesn't — without the caption? |
+| **Your week** (`your-week.html`) | Show the arc across people, and the scarcity that makes it work | One conversation can't show that you only get seven, or that different people sit at different depths at once. Seven cards at seven states show the whole system in one view | Does seven feel like enough, or like a restriction? |
 
----
+Navigation back to the landing screen is in the nav logo and the footer on all three screens.
 
-## Repo contents
+## 3. Design question plan
 
-- `index.html` — screen 1, the landing page.
-- `why-were-different.html` — screen 2, the market-research / problem page.
-- `features.html` — screen 3.
-- `README.md` — this document.
-- `design-prompt.md` — the brief these pages were generated from.
+Questions worded as I would actually say them, with predictions and what each rests on. **No findings yet.**
 
-Plain static HTML, no build step. Vercel serves the repo root as-is.
+| Group | Question | Prediction | Rests on |
+| --- | --- | --- | --- |
+| Capability | *"I'm going to show you this for five seconds, then take it away. What does this app do?"* | They say "you text someone before seeing their picture." They get the blind part; I predict they **miss the seven-a-week limit**, since it's inside the sentence rather than shown | Landing hero, `index.html` |
+| Capability | *"Click around on this and tell me what you think it's for."* | They click a suggested reply on the conversation screen, see the photo sharpen, and say it out loud unprompted. This is the moment I'm most confident in | Reply chips + depth meter, `conversation.html` |
+| Need | *"Tell me about the last time you tried a dating app. What actually happened?"* | Downloaded it, swiped a few days, a couple of dead conversations, deleted it inside two weeks. I expect "waste of time" more than "I didn't match" | Nothing — this one is deliberately about them, not the prototype |
+| Need | *"What makes you give up and close the app?"* | Dead threads and one-word replies, not rejection. If they say rejection instead, the blind premise is solving a problem they don't have | The premise itself |
+| Value | *"If this worked exactly as advertised, what would you get out of it? One or two words."* | Something near "actually being known" or "a fair shot." If they say "it's fun" or "less shallow," I've built novelty, not value | Landing hero + reveal on `conversation.html` |
+| Persona | *"How often do you meet someone new that you'd want to date, and what are you usually doing when it happens?"* | Rarely, and almost always through friends or work. Confirms the gap between "won't use apps" and "can't meet people in person" | Nothing — qualifies the persona |
+| Value / trust | *"What would have to be true for you to use this instead of what you do now?"* | They ask what stops people lying, or what happens if the photo is a letdown after four days. I predict this is the **top objection** and the prototype has no answer for it | Gap in current build |
 
-These began as Claude Design `.dc.html` artboards and were converted in place:
-the canvas runtime (`support.js`, `<x-dc>`, `<helmet>`, `<sc-if>`) is gone, the
-mobile sticky CTA is now a CSS media query, and inter-page links point at the
-deployed filenames. Re-editing them in the Claude Design canvas is no longer
-possible — edit the HTML directly.
+## 4. Design justification and first read
 
-**Note:** the pages use `[DatingApp]` as the name placeholder; the prose above
-uses `[AppName]`. Normalize on one token before the real name goes in.
+Opening the live URL as if for the first time:
+
+**Does the landing screen signal the capability and value at first glance?** Mostly. The headline and the affordance sentence sit in the strongest position and the hero image carries the idea without words — a blurred card and a clear card side by side, labelled *Message 1* and *Message 40*. Similarity makes them read as the same kind of object, so the difference between them reads as change over time rather than two different people. The part that does **not** survive a five-second read is "seven a week." It's bolded inside a sentence, which is a text-level fix for a pre-attentive problem.
+
+**Does everything on the landing screen earn its place?** Close. The three research stats are the weakest element — they're supporting evidence for why the product exists, not a signal of what it does, and they sit above pricing where attention is still worth something. They stay for now because the assignment asks the market gap to be visible, but if this were competing purely on comprehension I'd cut them.
+
+**Grouping, by principle:**
+- *Common region* — every conversation on **Your week** is a bordered card, so seven separate people read as seven separate things rather than one list.
+- *Proximity* — on **A conversation**, the depth meter, the photo, and the bio fragments sit in one panel with no internal dividers, because they are all answers to "what have I earned?" The thread is a separate panel. Two panels, two questions.
+- *Similarity* — the four reveal steps on the landing screen are identical cards differing only in blur, so blur is read as the variable. Nothing else changes to compete with it.
+- *Figure/ground* — blurred profile art is deliberately low-contrast ground; text and the depth bar are figure. The thing you can't have yet recedes.
+- *Continuity* — the depth bar, the step cards, and the week's seven-segment strip all run left-to-right as progress, so the same visual grammar means the same thing on all three screens.
+
+**Do screens 2 and 3 stay on mission?** Yes. Neither has a settings page, a login, or a feature list. Both end in a link to the other, and the nav logo plus footer return home from anywhere.
+
+### What the AI got wrong, and what changed
+
+**Before:** [`045f2a1`](https://github.com/ethanhousley1/DatingApp/commit/045f2a1) — the original three screens were Landing, *Why we're different*, and *Features*.
+
+| | Before | After |
+| --- | --- | --- |
+| Landing | ![before](docs/before-landing.png) | ![after](docs/after-landing.png) |
+| Screen 3 | ![before](docs/before-screen3.png) | ![after](docs/after-screen3.png) |
+
+**The problem, named:** screens 2 and 3 *described* the product instead of demonstrating it. *Why we're different* was a market-research page — stat cards and a bar chart arguing that dating apps are declining. *Features* was a marketing feature list. Neither let a user perform the capability, so a five-second test on either would have measured whether my copy is persuasive, not whether the concept is legible. The capability was never on screen.
+
+**The change:** both were replaced with product screens. *A conversation* is now interactive — you pick replies, a depth meter fills, and the photo resolves from `blur(22px)` to `blur(0)` in four stages. *Your week* shows seven conversations at seven different depths at once. Motivated by design question 2: *does the interaction teach the rule without the caption?* You cannot answer that on a page that has no interaction.
+
+**Three smaller revisions, each for a stated reason:**
+
+1. **The hero was a tagline, not an affordance.** It read "Talk first. See them later." — evocative, but it never said what you do or how often. Replaced with a headline plus an explicit affordance sentence naming the pairing, the blind start, and the unlock condition.
+2. **The revenue chart drew declines as upward bars.** Bumble (−9.5%) and Tinder (−5.2%) were rendered as short bars rising from a baseline next to Hinge's +25%, so the encoding said "everyone grew, Hinge grew most" while the labels said the opposite. Fixed with a zero baseline and the declines below it before the page was later cut entirely.
+3. **The waitlist button did nothing.** `preventDefault()` with no feedback, which would have killed design question 3 — you cannot ask "what do you expect will happen" about a control that does nothing. It now confirms inline.
+
+### Known gaps, carried forward
+
+- **Seven-a-week doesn't survive a five-second read.** It needs to be shown, not written.
+- **No answer to the honesty objection** I predict in question 7 — nothing addresses what stops someone misrepresenting themselves, or what happens when the reveal disappoints.
+- **Both conversations are scripted.** Replies are pre-written, so the prototype demonstrates the mechanic but not the experience of composing something real.
+
+## 5. Repo contents
+
+| Path | What it is |
+| --- | --- |
+| `index.html` | Screen 1 — landing |
+| `conversation.html` | Screen 2 — the blind conversation, interactive |
+| `your-week.html` | Screen 3 — the weekly seven |
+| `PRODUCT.md` | Product spec behind the prototype |
+| `design-prompt.md` | The brief given to the AI agent |
+| `docs/` | Before/after screenshots |
+
+Plain static HTML and vanilla JS. No build step, no dependencies. Vercel serves the repo root.
