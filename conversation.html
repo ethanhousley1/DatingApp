@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A conversation — Connections</title>
+<meta name="description" content="A blind conversation in Connections. No photo, no bio. Their profile unlocks as the conversation gets real.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#fff;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+  *{box-sizing:border-box}
+  a{color:oklch(0.55 0.19 300);text-decoration:none}
+  a:hover{color:oklch(0.44 0.19 300)}
+  @media(min-width:760px){.navlinks{display:flex !important}}
+  .reply:hover{background:oklch(0.93 0.04 300);border-color:oklch(0.7 0.12 300)}
+  .reply:disabled{opacity:.4;cursor:default}
+  .bubble{animation:rise .32s ease-out}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .frag{animation:fade .5s ease-out}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  @media(min-width:900px){.stage{grid-template-columns:1fr 340px !important}}
+</style>
+</head>
+<body>
+<div style="font-family:'Figtree',ui-sans-serif,system-ui,sans-serif;color:oklch(0.22 0.02 300);background:#fff;overflow-x:hidden">
+
+  <nav style="position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:clamp(14px,3vw,20px) clamp(16px,5vw,48px);background:oklch(0.99 0.003 300 / 0.85);backdrop-filter:blur(10px);border-bottom:1px solid oklch(0.93 0.015 300)">
+    <a href="index.html" style="font-weight:800;font-size:19px;letter-spacing:-0.01em;color:oklch(0.4 0.19 300)">Connections</a>
+    <div style="display:none;gap:28px;font-weight:600;font-size:15px;color:oklch(0.4 0.02 300)" class="navlinks">
+      <a href="conversation.html" style="color:oklch(0.4 0.19 300)">A conversation</a>
+      <a href="your-week.html">Your week</a>
+    </div>
+    <a href="index.html#join" style="flex-shrink:0;background:oklch(0.55 0.19 300);color:#fff;font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;box-shadow:0 8px 20px -8px oklch(0.5 0.19 300 / 0.55)">Join the waitlist</a>
+  </nav>
+
+  <header style="padding:clamp(32px,7vw,56px) clamp(20px,6vw,48px) clamp(20px,4vw,32px);max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:12px">
+    <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.55 0.19 300)">A conversation</div>
+    <h1 style="margin:0;font-size:clamp(26px,4.6vw,38px);font-weight:800;line-height:1.14">You can't see them yet. That's the point.</h1>
+    <p style="margin:0;font-size:16.5px;line-height:1.6;color:oklch(0.42 0.02 300);max-width:38em">Send a few replies and watch what happens on the right. Nothing unlocks because you sent more messages &mdash; it unlocks because you both asked something real.</p>
+  </header>
+
+  <main class="stage" style="padding:0 clamp(20px,6vw,48px) clamp(48px,9vw,88px);max-width:1040px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:start">
+
+    <!-- ============ the conversation ============ -->
+    <section aria-label="Conversation" style="background:oklch(0.975 0.014 300);border-radius:26px;padding:clamp(14px,3vw,20px);display:flex;flex-direction:column;gap:14px">
+
+      <div style="display:flex;align-items:center;gap:11px;padding-bottom:12px;border-bottom:1px solid oklch(0.92 0.02 300)">
+        <div style="width:38px;height:38px;flex-shrink:0;border-radius:50%;overflow:hidden"><div id="hdrAvatar" style="width:140%;height:140%;margin:-20% 0 0 -20%;background:linear-gradient(135deg,oklch(0.82 0.07 300),oklch(0.66 0.13 300));filter:blur(7px);transition:filter .6s ease"></div></div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <div id="hdrName" style="font-weight:700;font-size:15px;color:oklch(0.35 0.02 300);transition:color .4s">Someone</div>
+          <div id="hdrSub" style="font-size:12px;color:oklch(0.55 0.02 300)">Paired Tuesday &middot; 2 of your 7 this week</div>
+        </div>
+      </div>
+
+      <div id="thread" style="display:flex;flex-direction:column;gap:10px;min-height:260px"></div>
+
+      <div style="display:flex;flex-direction:column;gap:9px;padding-top:4px">
+        <div id="replyLabel" style="font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:oklch(0.55 0.02 300)">Your turn &mdash; pick a reply</div>
+        <div id="replies" style="display:flex;flex-direction:column;gap:8px"></div>
+      </div>
+    </section>
+
+    <!-- ============ what you've earned ============ -->
+    <aside aria-label="What you have unlocked" style="background:#fff;border:1px solid oklch(0.92 0.02 300);border-radius:26px;padding:clamp(16px,3vw,22px);display:flex;flex-direction:column;gap:16px;position:sticky;top:92px">
+
+      <div style="display:flex;flex-direction:column;gap:9px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <span style="font-weight:700;font-size:14px">Depth</span>
+          <span id="depthLabel" style="font-size:12px;font-weight:700;color:oklch(0.55 0.19 300)">Just started</span>
+        </div>
+        <div style="height:10px;border-radius:999px;background:oklch(0.93 0.02 300);overflow:hidden">
+          <div id="depthBar" style="width:6%;height:100%;background:linear-gradient(90deg,oklch(0.72 0.14 300),oklch(0.52 0.19 300));border-radius:999px;transition:width .7s cubic-bezier(.4,0,.2,1)"></div>
+        </div>
+        <div id="depthNote" style="font-size:12.5px;line-height:1.5;color:oklch(0.5 0.02 300)">Two-sided questions move this. Message count doesn't.</div>
+      </div>
+
+      <div style="height:1px;background:oklch(0.93 0.02 300)"></div>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:oklch(0.55 0.02 300)">Their profile</div>
+        <div style="width:100%;aspect-ratio:4/5;max-height:230px;border-radius:18px;overflow:hidden"><div id="photo" style="width:120%;height:120%;margin:-10% 0 0 -10%;background:linear-gradient(150deg,oklch(0.84 0.06 300),oklch(0.62 0.15 300) 60%,oklch(0.5 0.17 300));filter:blur(22px);transition:filter .9s cubic-bezier(.4,0,.2,1)"></div></div>
+        <div id="bio" style="display:flex;flex-direction:column;gap:7px"></div>
+      </div>
+
+      <button id="reset" style="margin-top:2px;background:none;border:1px solid oklch(0.88 0.03 300);color:oklch(0.5 0.02 300);font-family:inherit;font-weight:700;font-size:13px;padding:10px;border-radius:999px;cursor:pointer">Start over</button>
+    </aside>
+  </main>
+
+  <section style="padding:0 clamp(20px,6vw,48px) clamp(56px,10vw,100px);max-width:1040px;margin:0 auto">
+    <div style="background:oklch(0.975 0.014 300);border-radius:24px;padding:clamp(20px,4vw,30px);display:flex;flex-direction:column;gap:12px">
+      <h2 style="margin:0;font-size:clamp(19px,3vw,24px);font-weight:800;line-height:1.2">Why it unlocks the way it does</h2>
+      <p style="margin:0;font-size:15.5px;line-height:1.65;color:oklch(0.42 0.02 300);max-width:60ch">A reveal takes both of you. One person can't unlock the other by trying harder, and nobody can spam their way to a photo &mdash; sending ten messages in a row moves nothing. What moves it is asking something back. That's the whole rule.</p>
+      <a href="your-week.html" style="font-weight:700;font-size:15px">See all seven of your conversations &rarr;</a>
+    </div>
+  </section>
+
+  <footer style="padding:30px clamp(20px,6vw,48px) calc(30px + var(--sticky-pad,0px));border-top:1px solid oklch(0.93 0.015 300);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;font-size:13px;color:oklch(0.55 0.02 300)">
+    <a href="index.html" style="font-weight:800;color:oklch(0.4 0.19 300)">Connections</a>
+    <div style="display:flex;gap:18px;flex-wrap:wrap">
+      <a href="index.html">Home</a>
+      <a href="your-week.html">Your week</a>
+    </div>
+    <div>&copy; 2026 Connections</div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  // Scripted exchange. Each step: what you send, what they say back,
+  // and what that exchange earns you.
+  var STEPS = [
+    { you:"Ok but what's the most unhinged thing in your camera roll right now?",
+      them:"A photo of a stranger's dog I took without asking. I think about him weekly. You?",
+      depth:24, label:"Warming up", note:"You asked. They asked back. That counts twice.",
+      bio:null, blur:22 },
+
+    { you:"47 screenshots of apartments I can't afford. What's your weekly dog's name?",
+      them:"I named him Gerald. He does not know this. Are you actually apartment hunting or is it a hobby",
+      depth:48, label:"Getting somewhere", note:"First fragment unlocked.",
+      bio:"Names other people's dogs. Gerald is the current one.", blur:15 },
+
+    { you:"Hobby. It's what I do instead of sleeping. What keeps you up?",
+      them:"Honestly? Wondering if I picked the right city. I moved here for a job I left 8 months ago.",
+      depth:74, label:"Real now", note:"They told you something that cost them. Photo is resolving.",
+      bio:"Moved here for a job. Left the job. Stayed anyway.", blur:6 },
+
+    { you:"That's a big thing to still be sitting with. Do you regret staying?",
+      them:"No. That's the part that surprised me. I'll tell you the rest if you want to hear it.",
+      depth:100, label:"Unlocked", note:"You both earned this. Their profile is open.",
+      bio:"Still deciding if this is home. Leaning yes.", blur:0 }
+  ];
+
+  var thread  = document.getElementById('thread');
+  var replies = document.getElementById('replies');
+  var bioBox  = document.getElementById('bio');
+  var photo   = document.getElementById('photo');
+  var bar     = document.getElementById('depthBar');
+  var dLabel  = document.getElementById('depthLabel');
+  var dNote   = document.getElementById('depthNote');
+  var avatar  = document.getElementById('hdrAvatar');
+  var hdrName = document.getElementById('hdrName');
+  var rLabel  = document.getElementById('replyLabel');
+  var i = 0;
+
+  function bubble(text, mine){
+    var d = document.createElement('div');
+    d.className = 'bubble';
+    d.style.cssText = 'max-width:82%;padding:10px 14px;font-size:14.5px;line-height:1.45;'
+      + (mine
+        ? 'align-self:flex-end;background:oklch(0.55 0.19 300);color:#fff;border-radius:17px 17px 5px 17px'
+        : 'align-self:flex-start;background:#fff;color:oklch(0.25 0.02 300);border-radius:17px 17px 17px 5px');
+    d.textContent = text;
+    thread.appendChild(d);
+  }
+
+  function typing(cb){
+    var d = document.createElement('div');
+    d.className = 'bubble';
+    d.style.cssText = 'align-self:flex-start;background:#fff;border-radius:17px;padding:12px 16px;font-size:14px;color:oklch(0.6 0.02 300);letter-spacing:2px';
+    d.textContent = '•••';
+    thread.appendChild(d);
+    setTimeout(function(){ d.remove(); cb(); }, 900);
+  }
+
+  function addBio(text){
+    var d = document.createElement('div');
+    d.className = 'frag';
+    d.style.cssText = 'background:oklch(0.96 0.02 300);border-radius:11px;padding:9px 12px;font-size:13px;line-height:1.45;color:oklch(0.35 0.02 300)';
+    d.textContent = text;
+    bioBox.appendChild(d);
+  }
+
+  function render(){
+    replies.innerHTML = '';
+    if (i >= STEPS.length){
+      rLabel.textContent = 'Conversation unlocked';
+      var done = document.createElement('div');
+      done.style.cssText = 'background:oklch(0.95 0.03 300);border-radius:14px;padding:13px 15px;font-size:14px;line-height:1.5;color:oklch(0.35 0.02 300)';
+      done.innerHTML = "You know who they are now &mdash; and you found out in the order that actually matters.";
+      replies.appendChild(done);
+      return;
+    }
+    rLabel.textContent = 'Your turn — pick a reply';
+    var b = document.createElement('button');
+    b.className = 'reply';
+    b.style.cssText = 'text-align:left;background:#fff;border:1px solid oklch(0.89 0.03 300);border-radius:15px;padding:12px 15px;font-family:inherit;font-size:14px;line-height:1.45;color:oklch(0.3 0.02 300);cursor:pointer;transition:background .18s,border-color .18s';
+    b.textContent = STEPS[i].you;
+    b.onclick = send;
+    replies.appendChild(b);
+  }
+
+  function send(){
+    var s = STEPS[i];
+    document.querySelectorAll('.reply').forEach(function(x){ x.disabled = true; });
+    bubble(s.you, true);
+    replies.innerHTML = '';
+    rLabel.textContent = 'They’re replying…';
+
+    typing(function(){
+      bubble(s.them, false);
+      bar.style.width  = s.depth + '%';
+      dLabel.textContent = s.label;
+      dNote.textContent  = s.note;
+      photo.style.filter = 'blur(' + s.blur + 'px)';
+      avatar.style.filter = 'blur(' + Math.max(0, s.blur * 0.3) + 'px)';
+      if (s.bio) addBio(s.bio);
+      if (s.depth === 100){
+        hdrName.textContent = 'Maya';
+        hdrName.style.color = 'oklch(0.4 0.19 300)';
+      }
+      i++;
+      render();
+    });
+  }
+
+  function reset(){
+    i = 0;
+    thread.innerHTML = '';
+    bioBox.innerHTML = '';
+    bar.style.width = '6%';
+    dLabel.textContent = 'Just started';
+    dNote.textContent = "Two-sided questions move this. Message count doesn't.";
+    photo.style.filter = 'blur(22px)';
+    avatar.style.filter = 'blur(7px)';
+    hdrName.textContent = 'Someone';
+    hdrName.style.color = 'oklch(0.35 0.02 300)';
+    bubble("Fair warning, I'm bad at openers. So: what's a thing you'd happily talk about for an hour?", false);
+    render();
+  }
+
+  document.getElementById('reset').onclick = reset;
+  reset();
+})();
+</script>
+</body>
+</html>
