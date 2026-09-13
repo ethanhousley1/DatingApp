@@ -47,9 +47,13 @@ Questions only — no findings yet.
 
 ## 4. Design justification and first read
 
-**Does the landing screen signal the capability and value at first glance?** Yes — the capability signals right away. The headline and the sentence under it say what you do, and the hero image shows a blurred card next to a clear one labelled *Message 1* and *Message 40*, so the mechanic reads without words. The value is slower; you have to read to get why it matters.
+**Does the landing screen signal the capability and value at first glance?** No. It doesn't signal the capability before reading, for two reasons.
 
-**Does every element earn its place?** I think it's fine overall. The email field and the waitlist button grouped together works well. The one thing I'd change is that *See a conversation* and *See your week* sit too high — they're secondary, and right now they compete with the CTA for attention. They should be lower.
+First, it's too wordy. The affordance sentence is three clauses long and it's carrying the entire explanation on its own — so understanding what the app does is a *reading* task, not something the screen communicates pre-attentively. Five seconds isn't enough to get through it.
+
+Second, you can't see the demo easily. The two screens that actually prove the concept are reached through *See a conversation* and *See your week*, which are plain text links sitting low in the visual hierarchy underneath the email field. The most convincing thing I built is the part a first-time visitor is least likely to find.
+
+**Does every element earn its place?** The elements themselves are fine — nothing on the screen is irrelevant. The problem is weighting, not content. The email field and waitlist button grouped together works well and reads as one action. But *See a conversation* and *See your week* are in the wrong position: right now they compete with the CTA for attention while still being too low to function as the primary way in. Either they should be demoted properly, or the demo should be pulled onto the landing screen so it doesn't need a link at all.
 
 **Grouping.** The main principle at work is **proximity**. Each section is clearly established as its own block with space around it, so related things read as belonging together — the email input sits tight against the waitlist button so they read as one action, the four reveal steps sit in one row, and the depth meter, photo, and bio fragments share a single panel on the conversation screen because they're all answering the same question.
 
@@ -70,6 +74,8 @@ Questions only — no findings yet.
 | Screen 3 | ![before](docs/before-screen3.png) | ![after](docs/after-screen3.png) |
 
 **The problem, named:** the original hero was a tagline, not an affordance. It read *"Talk first. See them later."* — which is evocative but never says what you can actually do or how often, so nothing on the screen signalled the primary capability. It's now a headline plus a sentence that states the pairing, the blind start, and the unlock condition outright.
+
+That's an improvement, but by my own first read above it's still not a fix. The revision solved the problem at the level of *content* — the sentence now contains the capability — without solving it at the level of *signal*. It still has to be read to work. The next revision needs to carry the capability visually at the top of the screen rather than in a paragraph.
 
 The second problem was that the waitlist button called `preventDefault()` and then did nothing at all. It's the primary CTA, so a first-time user tapping it and getting no response is the worst possible outcome — it now confirms inline.
 
