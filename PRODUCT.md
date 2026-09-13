@@ -208,6 +208,42 @@ you're ready to meet, and the quality score.
   the thing we're trying to get away from. Keep the metric private.
 - Voice notes as a mid-stage reveal, between text and photo.
 
+### Newer ideas (Sept 2026)
+
+- **Cap on concurrent chats.** A ceiling on how many conversations can be open at
+  once, separate from the seven-a-week allowance. The weekly number controls
+  *intake*; this would control *attention*. Could replace the weekly cap entirely,
+  or sit alongside it — worth deciding which one is actually doing the work before
+  building both.
+
+- **Show the profile right away.** The direct opposite of the current premise.
+  Worth keeping on the list as the control condition: if the blind start isn't
+  what people value, this is what the product becomes. Also the cheapest thing to
+  A/B against once there are real users.
+
+- **Challenges.** The app asks the two of you to do something rather than just keep
+  typing — a voice call, send a photo, answer the same question at the same time.
+  Gives the reveal a shape beyond message depth, and a voice call is much harder to
+  fake than text, so it doubles as an honesty check. Fits with the voice-note idea
+  above.
+
+- **Reward ending it well.** The goal is *successful messages*, not just a match —
+  working toward your match rather than only finding them. That means you get
+  credit for correctly concluding that you and someone else don't work out. A clean
+  mutual "this isn't it" after a real conversation counts as a success, not a
+  failure, and shouldn't cost you anything.
+
+  This is probably the most important idea on this list. It's the one that actually
+  attacks the dopamine-cycle problem in the value statement: every other dating app
+  scores you on matches, so a conversation that ends is a loss and people stay in
+  dead threads to avoid feeling it. If ending well is rewarded, the app stops
+  punishing honesty. It also gives the quality score something better to measure
+  than depth alone.
+
+  Open question: how do you reward this without people farming it by opening and
+  closing conversations quickly? Probably needs the ending to be mutual, and to
+  come after real depth — the same two-sided test the reveal already uses.
+
 ## 10. Open questions
 
 - Does the quality score's effect on pairing need to be visible to users, or does
