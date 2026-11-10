@@ -1,6 +1,6 @@
 # Connections
 
-A blind texting app. You get seven conversations a week, each one starting with no photo and no bio. The other person's profile unlocks only as the two of you actually get to know each other.
+A blind texting app. You get seven conversations a week, each one starting with no photo and no bio. The other person's profile unlocks only as the two of you actually get to know each other. This project now uses ChatGPT.
 
 **Live prototype:** https://dating-app-nine-chi.vercel.app
 **Repo:** https://github.com/ethanhousley1/DatingApp
