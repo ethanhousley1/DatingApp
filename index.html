@@ -45,11 +45,15 @@
       </p>
 
       <form id="join" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px">
-        <input id="email" type="email" required="" placeholder="you@email.com" style="flex:1 1 220px;min-width:0;padding:15px 18px;border-radius:999px;border:1px solid oklch(0.88 0.02 300);font-size:15px;font-family:inherit;background:oklch(0.99 0.004 300);color:oklch(0.22 0.02 300)">
-        <button type="submit" style="flex-shrink:0;background:oklch(0.55 0.19 300);color:#fff;border:none;font-weight:700;font-size:15px;padding:15px 26px;border-radius:999px;cursor:pointer;box-shadow:0 10px 24px -10px oklch(0.5 0.19 300 / 0.6)">Join the waitlist</button>
+        <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email</label>
+        <input id="email" type="email" required="" autocomplete="email" placeholder="you@email.com" style="flex:1 1 220px;min-width:0;padding:15px 18px;border-radius:999px;border:1px solid oklch(0.88 0.02 300);font-size:15px;font-family:inherit;background:oklch(0.99 0.004 300);color:oklch(0.22 0.02 300)">
+        <!-- Left empty by people; bots that fill every field get ignored. -->
+        <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <button id="joinBtn" type="submit" style="flex-shrink:0;background:oklch(0.55 0.19 300);color:#fff;border:none;font-weight:700;font-size:15px;padding:15px 26px;border-radius:999px;cursor:pointer;box-shadow:0 10px 24px -10px oklch(0.5 0.19 300 / 0.6)">Join the waitlist</button>
       </form>
-      <div id="joined" role="status" style="display:none;font-size:14.5px;font-weight:600;color:oklch(0.45 0.19 300);background:oklch(0.96 0.025 300);border-radius:14px;padding:12px 16px"></div>
-      <p id="joinNote" style="margin:0;font-size:13px;color:oklch(0.55 0.02 300)">Free to start. One email when we open up, nothing else.</p>
+      <div id="joined" role="status" tabindex="-1" style="display:none;font-size:14.5px;font-weight:600;color:oklch(0.45 0.19 300);background:oklch(0.96 0.025 300);border-radius:14px;padding:12px 16px"></div>
+      <div id="joinError" role="alert" style="display:none;font-size:14px;font-weight:600;color:oklch(0.5 0.18 25);background:oklch(0.96 0.03 25);border-radius:14px;padding:12px 16px"></div>
+      <p id="joinNote" style="margin:0;font-size:13px;color:oklch(0.55 0.02 300)">Free to start. We'll only email you about Connections.</p>
 
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:6px">
         <a href="conversation.html" style="font-weight:700;font-size:14.5px;border:1px solid oklch(0.85 0.05 300);border-radius:999px;padding:11px 18px">See a conversation &rarr;</a>
@@ -174,17 +178,60 @@
 
 <script>
 (function(){
+  // Where waitlist sign-ups are saved. The anon key is public by design: the
+  // database only lets it call join_waitlist(), never read the list.
+  var LOCAL = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  var WAITLIST = LOCAL
+    ? { url: 'http://127.0.0.1:56321', key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0' }
+    : { url: '', key: '' }; // TODO: hosted Supabase project URL and anon key
+
   var form = document.getElementById('join');
+  var btn = document.getElementById('joinBtn');
+  var err = document.getElementById('joinError');
+
+  function showError(text){
+    err.textContent = text;
+    err.style.display = 'block';
+  }
+
+  function done(email){
+    var ok = document.getElementById('joined');
+    ok.textContent = "You're on the list. We'll be in touch at " + email + ".";
+    ok.style.display = 'block';
+    form.style.display = 'none';
+    err.style.display = 'none';
+    document.getElementById('joinNote').style.display = 'none';
+    ok.focus && ok.focus();
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var email = document.getElementById('email').value.trim();
     if (!email) return;
-    var ok = document.getElementById('joined');
-    ok.textContent = "You're on the list. We'll email " + email + " once, when we open up.";
-    ok.style.display = 'block';
-    form.style.display = 'none';
-    document.getElementById('joinNote').style.display = 'none';
-    ok.focus && ok.focus();
+    err.style.display = 'none';
+    if (document.getElementById('company').value) return done(email); // bot
+    if (!WAITLIST.url || !WAITLIST.key) {
+      console.warn('Waitlist is not connected: set the hosted Supabase URL and anon key in index.html.');
+      return showError("The waitlist isn't open yet. Try again soon.");
+    }
+    btn.disabled = true;
+    btn.textContent = 'Joining…';
+    fetch(WAITLIST.url + '/rest/v1/rpc/join_waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', apikey: WAITLIST.key },
+      body: JSON.stringify({ email: email, source: new URLSearchParams(location.search).get('ref') || 'landing' })
+    }).then(function(res){
+      if (res.ok) return done(email);
+      return res.json().catch(function(){ return {}; }).then(function(body){
+        // P0001 = a message written for people (e.g. a mistyped email); hide anything else.
+        showError(body && body.code === 'P0001' ? body.message : 'Something went wrong. Try again in a minute.');
+      });
+    }).catch(function(){
+      showError("Couldn't reach the waitlist. Check your connection and try again.");
+    }).finally(function(){
+      btn.disabled = false;
+      btn.textContent = 'Join the waitlist';
+    });
   });
 })();
 </script>

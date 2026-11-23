@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* Connections: white-dominant, purple accent, soft lavender surfaces. */
+@theme inline {
+  --color-brand: oklch(0.55 0.19 300);
+  --color-brand-strong: oklch(0.45 0.19 300);
+  --color-brand-soft: oklch(0.93 0.035 300);
+  --color-lav: oklch(0.975 0.014 300);
+  --color-lav-2: oklch(0.955 0.022 300);
+  --color-line: oklch(0.91 0.02 300);
+  --color-ink: oklch(0.22 0.02 300);
+  --color-muted: oklch(0.45 0.02 300);
+  --color-danger: oklch(0.5 0.18 25);
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
