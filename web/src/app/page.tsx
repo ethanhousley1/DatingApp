@@ -228,7 +228,7 @@ export default function Home() {
             </span>
             <div className="flex flex-1 flex-col">
               <span className="text-[15px] font-bold">Looking for someone…</span>
-              <span className="text-[13.5px] text-muted">We&apos;ll email you when you&apos;re paired.</span>
+              <span className="text-[13.5px] text-muted">They&apos;ll show up here as soon as you&apos;re paired.</span>
             </div>
             <Button variant="ghost" onClick={stopLooking} disabled={busy}>
               Stop
